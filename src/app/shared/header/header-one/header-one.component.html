@@ -1,0 +1,65 @@
+<!-- header start -->
+<header id="header-type" style="background-color: #111111;">
+	<div class="mobile-fix-option"></div>
+	<div class="top-header">
+		<div class="container">
+			<!-- <app-topbar></app-topbar> style="background: rgba(10, 10, 10, 0.92);" -->
+		</div>
+	</div>
+	<div class="container" >
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="main-menu">
+					<div class="menu-left">
+						<div class="navbar">
+							<a (click)="openNav()">
+								<div class="bar-style"> 
+									<i class="fa fa-bars sidebar-bar" aria-hidden="true"></i>
+								</div>
+							</a>
+							
+							<div id="mySidenav" class="sidenav">
+						    <a [routerLink]="" class="sidebar-overlay" (click)="closeNav()"></a>
+						    <nav style="background-color: #111;">
+						      <div (click)="closeNav()">
+						        <div class="sidebar-back text-left" style="color: #fff;"> 
+						          <i class="fa fa-angle-left pr-2" aria-hidden="true"></i> Back
+						        </div>
+						      </div>
+							  <app-left-menu></app-left-menu>
+							</nav>
+							</div>
+						</div>
+						
+						<div class="brand-logo" style="padding: 10px 0;">
+							<a [routerLink]="['/home/toolots']">
+								<img  src="assets/images/ToolotsLogo.png" style="min-height: 60px; max-width: 360px;" alt="">
+							</a>
+						</div>
+					</div>
+					<div class="nav-search-1">
+								<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Search a Product by Keyword, SKU or TPIN" style="width: 100% !important;">
+								<button class="searchbutton">
+										<i style="color: #fff; font-size: 20px;" class="fa fa-search" aria-hidden="true"></i>
+								</button>
+						</div>
+					<div class="menu-right pull-right">
+						<div>
+							<app-navbar></app-navbar>
+						</div>
+						<div>
+							<app-header-widgets [shoppingCartItems]="shoppingCartItems"></app-header-widgets>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="nav-search-2">
+					<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Search by Keyword, SKU or TPIN">
+					<button class="searchbutton">
+							<i style="color: #fff; font-size: 20px;" class="fa fa-search" aria-hidden="true"></i>
+					</button>
+			</div>
+		</div>
+	</div>
+</header>
+<!-- header end -->
