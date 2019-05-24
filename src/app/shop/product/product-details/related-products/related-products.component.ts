@@ -19,7 +19,7 @@ export class RelatedProductsComponent implements OnInit {
   public productSlideConfig: any = {
     // infinite: true,
     speed: 300,
-    slidesToShow: 5,
+    slidesToShow: 7,
     slidesToScroll: 1,
     // autoplay: true,
     // autoplaySpeed: 3000,

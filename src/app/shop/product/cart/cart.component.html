@@ -2,19 +2,25 @@
 <div class="breadcrumb-section">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-12">
         <div class="page-title">
-          <h2>cart</h2>
+            <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a [routerLink]="'/home/one'">Home</a></li>
+                  <li class="breadcrumb-item active">cart</li>
+                </ol>
+              </nav>
+          
         </div>
       </div>
-      <div class="col-sm-6">
+      <!-- <div class="col-sm-6">
         <nav aria-label="breadcrumb" class="theme-breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a [routerLink]="'/home/one'">Home</a></li>
             <li class="breadcrumb-item active">cart</li>
           </ol>
         </nav>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

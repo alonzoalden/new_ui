@@ -2,7 +2,7 @@
 <div class="breadcrumb-section">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-12">
                 <nav aria-label="breadcrumb" class="theme-breadcrumb">
                     <ol class="breadcrumb" style="justify-content: flex-start;">
                         <li class="breadcrumb-item"><a [routerLink]="'/home/one'">Home</a></li>
@@ -12,21 +12,6 @@
                     </ol>
                 </nav>
             </div>
-            <!-- <div class="col-sm-6">
-                <div class="page-title">
-                    <h2>KR-23 SINGLE DOOR STAINLESS STEEL REACH-IN REFRIGERATOR 20 CU.FT. /560 LITER</h2>
-                </div>
-            </div> -->
-            <!-- <div class="col-sm-6">
-                <nav aria-label="breadcrumb" class="theme-breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a [routerLink]="'/home/one'">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">commercial kitchen appliances</li>
-                        <li class="breadcrumb-item active" aria-current="page">refrigerators</li>
-
-                    </ol>
-                </nav>
-            </div> -->
         </div>
     </div>
 </div>
@@ -36,111 +21,90 @@
     <div class="collection-wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4">
-                    <ngx-slick-carousel class="product-slick" #slickModal="slick-carousel" [config]="slideConfig">
-                        <div ngxSlickItem *ngFor="let image of product.pictures; let i = index;">
-                          <div>
-                            <img [src]="image" alt="" class="img-fluid" (click)="open(i)">
-                          </div>
-                        </div>
-                    </ngx-slick-carousel>
+                <div class="col-lg-8">
                     <div class="row">
-                      <div class="col-12 p-0">
-                         <ngx-slick-carousel class="slider-nav" #slickModal="slick-carousel" [config]="slideNavConfig">
-                            <div ngxSlickItem *ngFor="let image of product.pictures">
-                             <div>
-                               <img [src]="image" alt="" class="img-fluid">
-                             </div>
+                        <div class="col-lg-7">
+                            <ngx-slick-carousel class="product-slick side-scroller main-photo" #slickModal="slick-carousel" [config]="slideConfig">
+                                <div ngxSlickItem *ngFor="let image of product.pictures; let i = index;" style=" height: 530px;">
+                                    <div>
+                                        <img [src]="image" alt="" class="img-fluid" (click)="open(i)">
+                                    </div>
+                                </div>
+                            </ngx-slick-carousel>
+                            <div class="side-scroller full-width">
+                                <ngx-slick-carousel *ngIf="isLoaded" class="slider-nav icon-display" #slickModal="slick-carousel" [config]="slideNavConfig" style="display: flex; align-items: center;">
+                                    <div ngxSlickItem *ngFor="let image of product.pictures" style="">
+                                        <div >
+                                            <img [src]="image" alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </ngx-slick-carousel>
                             </div>
-                        </ngx-slick-carousel>
-                      </div>
+                                
+                            
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="product-right product-description-box" style="padding-bottom: 0px;">
+                                
+                                <h2 style="margin-bottom: 10px;">{{product.name}}</h2>
+                                <div class="border-product" style="margin-top: 10px; margin-bottom: 0px; ">
+                                    <div class="rating three-star " style="margin-bottom:0px;">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <span style="padding-right: 10px;padding-left: 6px;"><a (click)="scrollToEl(reviewsTab, 0)" [routerLink]="" style="font-weight: 600;">20 reviews</a></span>
+                                        <span style="color: #666">|</span>
+                                        <span style="padding-left: 10px; padding-right: 6px;"><a (click)="scrollToEl(questionsTab, 0)" [routerLink]="" style="font-weight: 600;">4 answered questions</a></span>
+                                        
+                                        
+                                    </div>
+                                
+                                    <p><strong style="margin-right: 4px;">BY: </strong> <a href="https://www.google.com" target="_blank"> Kalifon Kitchen Equipment</a></p>
+                                    <p><strong style="margin-right: 5px;">TPIN: </strong>1K9227363451A</p>
+                                    <p><strong style="margin-right: 5px;">CONDITION: </strong>NEW</p>
+                                    <div style="display: inline-block; margin: 5px 0;">
+                                        <a [routerLink]="" [attr.data-target]="'#toolots-modal-reviews'" data-toggle="modal" class=""
+                                            style="padding: 4px 6px; font-weight: normal; background-color: #ffa928; color: #fff; letter-spacing: 0.2px;">
+                                            See Toolots Reviews
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="border-product" style="margin-top: 10px; margin-bottom: 30px; ">
+                                    <h6 class="product-title">product details</h6>
+                                    <p style="overflow: hidden; max-height: 360px;">
+                                        {{product.shortDetails}}{{product.shortDetails}}{{product.shortDetails}}
+                                        {{product.shortDetails}}{{product.shortDetails}}{{product.shortDetails}}...
+                                    </p>
+                                    
+                                    <!-- <p> Read more...</p> -->
+                                    
+                                    <!-- <div style="position: absolute;
+                                        bottom: 0;
+                                        right: 0;
+                                        left: 0;
+                                        display: flex;
+                                        justify-content: center;
+                                        padding: 60px 0 30px 0;
+                                        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255,255,255,1));">
+                                        <i class="fa fa-chevron-circle-down" style="font-size: 30px;" (click)="scrollToEl(descriptionTab)"></i>
+                                    </div>  -->
+                                    <div style="display: flex; padding-top: 5px; padding-bottom: 20px;">
+                                        <a [routerLink]="" (click)="scrollToEl(descriptionTab, 0)" style="font-weight: 600;">Read more...</a>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- <button (click)="changeConfig()"></button> -->
                     </div>
                 </div>
-                <div class="col-lg-5">
-                    <div class="product-right product-description-box">
-                        <h2>{{product.name}}</h2>
-                        <p><strong>BY</strong> <a href="https://www.google.com" target="_blank"> Kalifon Kitchen Equipment</a></p>
-                        <div class="rating three-star  mb-2">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <span style="padding-right: 6px;"><a (click)="scrollToEl(toptab, topReviewsTab)" [routerLink]="">20 reviews</a></span>
-                            <span style="color: #666">|</span>
-                            <span style="padding-left: 6px;"><a (click)="scrollToEl(toptab, topQATab)" [routerLink]="">4 answered questions</a></span>
-                        </div>
-                        <div style="margin-bottom: 10px;">
-                            <a [routerLink]="" [attr.data-target]="'#toolots-modal-reviews'" data-toggle="modal" class=""
-                                style="padding: 4px 6px; font-weight: normal; background-color: #ffa928; color: #fff; letter-spacing: 0.2px;">
-                                See Toolots Reviews
-                            </a>
-                        </div>
-                        <div class="border-product">
-                            <h6 class="product-title">product details</h6>
-                            <p>{{product.shortDetails}}</p>
-                        </div>
-                        <!-- <div class="single-product-tables border-product detail-section">
-                            <table>
-                                <tbody><tr>
-                                    <td>Febric:</td>
-                                    <td>Chiffon</td>
-                                </tr>
-                                <tr>
-                                    <td>Color:</td>
-                                    <td>Yellow</td>
-                                </tr>
-                                <tr>
-                                    <td>Material:</td>
-                                    <td>Crepe printed</td>
-                                </tr>
-                                <tr *ngIf="!productsService?.catalogMode">
-                                    <td>Avalibility:</td>
-                                    <td *ngIf="counter <= product.stock">In Stock</td>
-                                    <td *ngIf="counter > product.stock">Out of Stock</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div> -->
-                        <div class="border-product">
-                            <h6 class="product-title">share it</h6>
-                            <div class="product-icon">
-                                <ul class="product-social">
-                                  <li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
-                                  <li><a href="https://plus.google.com/discover"><i class="fa fa-google-plus"></i></a></li>
-                                  <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-                                  <li><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                                <form class="d-inline-block" *ngIf="!productsService?.catalogMode">
-                                    <button class="wishlist-btn" (click)="addToWishlist(product)"><i class="fa fa-heart"></i><span class="title-font">Add To WishList</span></button>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="border-product">
-                            <h6 class="product-title">100% SECURE PAYMENT</h6>
-                            <div class="payment-card-bottom">
-                                <ul>
-                                    <li>
-                                        <a [routerLink]=""><img src="assets/images/icon/visa.png" alt=""></a>
-                                    </li>
-                                    <li>
-                                        <a [routerLink]=""><img src="assets/images/icon/mastercard.png" alt=""></a>
-                                    </li>
-                                    <li>
-                                        <a [routerLink]=""><img src="assets/images/icon/paypal.png" alt=""></a>
-                                    </li>
-                                    <li>
-                                        <a [routerLink]=""><img src="assets/images/icon/american-express.png" alt=""></a>
-                                    </li>
-                                    <li>
-                                        <a [routerLink]=""><img src="assets/images/icon/discover.png" alt=""></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3" *ngIf="!productsService?.catalogMode">
+                <div class="col-lg-4" *ngIf="!productsService?.catalogMode">
                     <div class="product-right product-form-box">
                         <h4><del>{{product.salePrice | currency:productsService?.currency:'symbol'}}</del><span>{{product.discount}}% off</span></h4>
                         <h3>{{product.price | currency:productsService?.currency:'symbol'}}</h3>
@@ -148,6 +112,7 @@
                           <li [class]="variant.color" (click)="slickModal.slickGoTo(i)" *ngFor="let variant of product.variants let i = index"></li>
                         </ul> -->
                         <div class="product-description border-product">
+                            <h5 class="avalibility">In Stock</h5>
                             <!-- <h6 class="product-title">Time Reminder</h6>
                             <div class="timer">
                                 <p id="timer">
@@ -193,20 +158,61 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="product-buttons" style="text-align: center; width: 55%; display: inline-block;">
+                        <div class="product-buttons" style="text-align: center; width: 55%; display: inline-block; margin-bottom: 0px;">
                             <a [routerLink]="" style="width: 100%; display: block; text-align: center; margin-bottom: 10px; " (click)="addToCart(product, counter)" class="btn btn-solid" [class.disabled]="counter > product.stock">add to cart</a>
                             <a [routerLink]="" style="width: 100%; display: block; text-align: center; margin-left: 0;" (click)="buyNow(product, counter)" class="btn btn-solid" [class.disabled]="counter > product.stock">buy now</a>
                         </div>
+                        
+                        <div class="border-product" style="margin-top: 20px; padding-bottom: 0px;">
+                            <div class="product-icon" style="margin-top: 10px; display: initial;">
+                                <form class="d-inline-block" *ngIf="!productsService?.catalogMode">
+                                    <button class="wishlist-btn" (click)="addToWishlist(product)" style="margin-top: 5px; margin-bottom: 12px;"><i class="fa fa-heart" style="padding-left: 0; margin-left: 0; margin-top: 0px; border-left: none;"></i><span class="title-font" style="font-size: 16px;">Add To WishList</span></button>
+                                </form>
+                            </div>
+                            <h6 class="product-title">100% SECURE PAYMENT</h6>
+                            <div class="payment-card-bottom" >
+                                <ul style="width: 75%; display: flex; justify-content: space-evenly; margin: 0 auto;">
+                                    <li>
+                                        <a [routerLink]=""><img src="assets/images/icon/visa.png" alt=""></a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]=""><img src="assets/images/icon/mastercard.png" alt=""></a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]=""><img src="assets/images/icon/paypal.png" alt=""></a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]=""><img src="assets/images/icon/american-express.png" alt=""></a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]=""><img src="assets/images/icon/discover.png" alt=""></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mt-3">
+                                <a [routerLink]="" [attr.data-target]="'#why-low-price-modal'" data-toggle="modal" style="font-size: 12px;  ">
+                                    Why is our price so low?
+                                </a>
+                            </div>
+                        </div>
+                        
                     </div>
                     <!-- <app-frequently-bought></app-frequently-bought> -->
                 </div>
+                
+
+
             </div>
+           
         </div>
     </div>
 </section>
+
+<app-related-products></app-related-products>
+
 <!-- Section ends -->
 <!-- product-tab starts -->
-<section class="tab-product m-0">
+<!-- <section class="tab-product m-0">
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-lg-12">
@@ -232,16 +238,16 @@
                     <a class="nav-link" id="qa-top-tab" data-toggle="tab" href="#top-qa" role="tab" #topQATab aria-selected="false">Q&A</a>
                     <div class="material-border"></div>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" id="review-top-tab" data-toggle="tab" href="#top-review" role="tab" aria-selected="false">Write Review</a>
-                    <div class="material-border"></div>
-                </li> -->
+
             </ul>
             <div class="tab-content nav-material" id="top-tabContent">
                 <div class="tab-pane fade show active" id="top-home" role="tabpanel" aria-labelledby="top-home-tab">
                     <p style="white-space: pre-wrap">
                         {{product.description}}
                     </p>
+                    <div class="mt-3 text-center">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/BUWzX78Ye_8" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
                 </div>
                 <div class="tab-pane fade" id="top-profile" role="tabpanel" aria-labelledby="profile-top-tab">
                     <p style="white-space: pre-wrap">
@@ -364,41 +370,9 @@
                 <div class="tab-pane fade" id="top-qa" role="tabpanel" aria-labelledby="qa-top-tab">
                     <div style="display: flex; align-items: center; margin-top: 10px; margin-right: 20px;" >
                         <i class="fa fa-search" style="font-size: 20px; position: absolute; margin-left: 14px; color: #888"></i>
-                        <input type="text" class="form-control" placeholder="Search Question" style="padding-inline-start: 42px;">
+                        <input type="text" class="form-control" placeholder="Search Question" style="padding-left: 42px;">
                     </div>
                     <div class="mt-3 product-right qa" style="padding-left: 30px;">
-                        
-                            <!-- <div>
-                                <div>
-                                    <div>
-                                        QUESTION
-                                    </div>
-                                    <div>
-                                        ANSWER
-                                    </div>
-                                </div>
-                                <div>
-                                    <div>
-                                        How many extra bolts come with this product? 
-                                    </div>
-                                    <div>
-                                        This comes with a small replacement parks package located inside the the cabinet. There are 12 extra bolts inside.
-                                    </div>
-                                </div>
-                                <div>
-                                    <div>
-                                        <div class="qa-label">
-                                            <i class="fa fa fa-angle-up"></i>
-                                        </div>
-                                        
-                                        <div class="qa-label">
-                                            7 votes
-                                        </div>
-                                        <i class="fa fa fa-angle-down"></i>
-                                    </div>
-                                </div>
-                            </div> -->
-                        
                         <div style="display: flex;">
                             <div style="flex: 1;">
                                 <div style="display: flex;">
@@ -419,10 +393,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                                <i class="fa fa-angle-up upvote" style="font-size: 26px;"></i>
-                                <span>6 votes</span>
-                                <i class="fa fa-angle-down upvote" style="font-size: 26px;"></i>
+                            <div style="min-width: 80px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                                <i class="fa fa-angle-up upvote" style="font-size: 26px;" (click)="voteCount = voteCount+1"></i>
+                                <span>{{voteCount}} votes</span>
+                                <i class="fa fa-angle-down upvote" style="font-size: 26px;" (click)="voteCount = voteCount-1"></i>
                             </div>
                         </div>
                         <hr>
@@ -448,7 +422,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                            <div style="min-width: 80px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
                                 <i class="fa fa-angle-up upvote" style="font-size: 26px;"></i>
                                 <span>3 votes</span>
                                 <i class="fa fa-angle-down upvote" style="font-size: 26px;"></i>
@@ -475,7 +449,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                            <div style="min-width: 80px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
                                 <i class="fa fa-angle-up upvote" style="font-size: 26px;"></i>
                                 <span>2 votes</span>
                                 <i class="fa fa-angle-down upvote" style="font-size: 26px;"></i>
@@ -502,7 +476,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                            <div style="min-width: 80px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
                                 <i class="fa fa-angle-up upvote" style="font-size: 26px;"></i>
                                 <span>0 votes</span>
                                 <i class="fa fa-angle-down upvote" style="font-size: 26px;"></i>
@@ -566,8 +540,295 @@
         </div>
     </div>
 </div>
-</section>
+</section> -->
+<div #descriptionTab style="position: absolute; margin-top: 0px;"></div>
+<section class=" side-scroller">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 product-related">
+                    <h2>DESCRIPTION</h2>
+                </div>
+                <div class="col-12 product-related">
+                    <p style="white-space: pre-wrap; padding: 20px;
+                    margin-bottom: -6px;
+                    line-height: 2;
+                    letter-spacing: 0.05em;
+                    margin-top: -10px;
+                    padding-bottom: 0;">{{product.description}}</p>
+                </div>
+                <div class="col-12 product-related" style="margin-top: 40px;">
+                    <h4>PRODUCT INFORMATION</h4>
+                </div>
+                <div class="col-12">
+                    <div class="single-product-tables">
+                        <table>
+                            <tbody><tr>
+                                <td>Febric</td>
+                                <td>Chiffon</td>
+                            </tr>
+                            <tr>
+                                <td>Color</td>
+                                <td>Red</td>
+                            </tr>
+                            <tr>
+                                <td>Material</td>
+                                <td>Crepe printed</td>
+                            </tr>
+                            </tbody></table>
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td>Length</td>
+                                <td>50 Inches</td>
+                            </tr>
+                            <tr>
+                                <td>Size</td>
+                                <td>S, M, L .XXL</td>
+                            </tr>
+                            </tbody></table>
+                    </div>
+                    <div class="mt-3 text-center">
+                        <!-- <iframe width="560" height="315" src="https://www.youtube.com/watch?v=MW_7HXYSBlM" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/MW_7HXYSBlM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+            <!-- </div> -->
+        
+    </section>
+    <div #reviewsTab style="position: absolute; margin-top: 0px;"></div>
+<section class=" side-scroller">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 product-related">
+                    <h2>REVIEWS</h2>
+                </div>
+                <div>
+                    <div class="col-lg-12">
+                        <div class="reviews-topbar" style="margin-top: 0;">
+                            <div>
+                                <div class="rating three-star" style="font-size: 24px;">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star" ></i>
+                                    <span class="reviews-amount">20 Reviews</span>
+                                </div>
+                                
+                            </div>
+                            <a [routerLink]="" style="width: 180px; display: block; text-align: center; " class="btn btn-solid">write review</a>
+                        </div>
+                    </div>
+                    <div class="mt-3 product-right product-reviews">
+                        <div>
+                            <h5>William McKinley</h5>
+                            <div>
+                                
+                                <div class="rating three-star">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                
+                                <strong>Don't waste anymore time shopping, buy this.</strong>
+                            </div>
+                            <span style="color: #777777;">December 12, 2019</span>
+                            <div class="review-content" >dard dummy text ever sLorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Precision Bottom mount refrigeration system with ETL.</div>
+                        </div>
+                        <hr>
+                        <div>
+                            <div><h5>Anna Smith</h5></div>
+                            <div>
+                            
+                                <div class="rating three-star">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                
+                                <strong>This is a great refrigerator at an unbeatable price.</strong>
+                            </div>
+                            <span style="color: #777777;">January 1, 2019</span>
+                            <div class="review-content">dard dummy text ever since the 1500s, when an THIS IS A MUST BUY popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Precision Bottom mount refrigeration system with ETL.</div>
+                        </div>
+                        <hr>
+                        <div>
+                            <div><h5>Jim Yang</h5></div>
+                            <div>
+                                <div class="rating three-star">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <strong>The last refrigerator you'll ever need.</strong>
+                            </div>
+                            <span style="color: #777777;">December 12, 2019</span>
+                            <div class="review-content" >dard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Precision Bottom mount refrigeration system with ETL.</div>
+                        </div>
+                        <hr>
+                        <div>
+                            <div>
+                                <div class="qa-label">
+                                    <button class="btn btn-link" style="padding: 0;">See more reviews</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- </div> -->
+        
+    </section>
+    <div #questionsTab style="position: absolute; margin-top: 0px;"></div>
+    <section>
+        <div class="container">
+            <div class="row"> 
+                <div class="col-12 product-related">
+                    <h2>QUESTIONS ABOUT THIS PRODUCT</h2>
+                </div>
+            </div>
+                <div style="display: flex; align-items: center; margin-top: 10px; margin-right: 20px;" >
+                    <i class="fa fa-search" style="font-size: 20px; position: absolute; margin-left: 14px; color: #888"></i>
+                    <input type="text" class="form-control" placeholder="Search Question" style="padding-left: 42px;">
+                </div>
+            
+            <div class="mt-3 product-right qa" style="padding-left: 30px;">
+                <div style="display: flex;">
+                    <div style="flex: 1;">
+                        <div style="display: flex;">
+                            <div class="qa-label">
+                                Question:
+                            </div>
+                            <div class="qa-question">
+                                <h6 class="product-title">Does this come with a freezer?</h6>
+                            </div>
+                        </div>
+                        <div style="display: flex;">
+                            <div class="qa-label">
+                                Answer:
+                            </div>
+                            <div class="qa-answer">
+                                <div>Yes it is very safe to use this we also sell it here on Toolots</div>
+                                <div class="qa-answer-author">By Alonzo Alden on August 13, 2019</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="min-width: 80px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <i class="fa fa-angle-up upvote" style="font-size: 26px;" (click)="voteCount = voteCount+1"></i>
+                        <span>{{voteCount}} votes</span>
+                        <i class="fa fa-angle-down upvote" style="font-size: 26px;" (click)="voteCount = voteCount-1"></i>
+                    </div>
+                </div>
+                <hr>
+                <div style="display: flex;">
+                    <div style="flex: 1;">
+                        <div style="display: flex;">
+                        
+                            <div class="qa-label">
+                                Question:
+                            </div>
+                            <div class="qa-question">
+                                <h6 class="product-title">Does this item come with a a manufacterer warranty?</h6>
+                            </div>
+                        </div>
+                        <div style="display: flex;">
+                        
+                            <div class="qa-label">
+                                Answer:
+                            </div>
+                            <div class="qa-answer">
+                                <div>Yes it is very safe to use this we also sell it here on Toolots</div>
+                                <div class="qa-answer-author">By Alonzo Alden on August 13, 2019</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="min-width: 80px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <i class="fa fa-angle-up upvote" style="font-size: 26px;"></i>
+                        <span>3 votes</span>
+                        <i class="fa fa-angle-down upvote" style="font-size: 26px;"></i>
+                    </div>
+                </div>
+                <hr>
+                <div style="display: flex;">
+                    <div style="flex: 1;">
+                        <div style="display: flex;">
+                            <div class="qa-label">
+                                Question:
+                            </div>
+                            <div class="qa-question">
+                                <h6 class="product-title">Is it safe to Use 220V power supply on this item?</h6>
+                            </div>
+                        </div>
+                        <div style="display: flex;">
+                            <div class="qa-label">
+                                Answer:
+                            </div>
+                            <div class="qa-answer">
+                                <div>Yes it is very safe to use this we also sell it here on Toolots</div>
+                                <div class="qa-answer-author">By Alonzo Alden on August 13, 2019</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="min-width: 80px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <i class="fa fa-angle-up upvote" style="font-size: 26px;"></i>
+                        <span>2 votes</span>
+                        <i class="fa fa-angle-down upvote" style="font-size: 26px;"></i>
+                    </div>
+                </div>
+                <hr>
+                <div style="display: flex;">
+                    <div style="flex: 1;">
+                        <div style="display: flex;">
+                            <div class="qa-label">
+                                Question:
+                            </div>
+                            <div class="qa-question">
+                                <h6 class="product-title">Is it safe to Use 220V power supply on this item?</h6>
+                            </div>
+                        </div>
+                        <div style="display: flex;">
+                            <div class="qa-label">
+                                Answer:
+                            </div>
+                            <div class="qa-answer">
+                                <div>Yes it is very safe to use this we also sell it here on Toolots</div>
+                                <div class="qa-answer-author">By Alonzo Alden on August 13, 2019</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="min-width: 80px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <i class="fa fa-angle-up upvote" style="font-size: 26px;"></i>
+                        <span>0 votes</span>
+                        <i class="fa fa-angle-down upvote" style="font-size: 26px;"></i>
+                    </div>
+                </div>
+                
+                <hr>
+                <div>
+                    <div>
+                        <div class="qa-label">
+                            <button class="btn btn-link" style="padding: 0;">See more answered questions</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 text-right">
+                <button class="btn btn-solid">ASK A QUESTION</button>
+            </div>
+        </div>
+    </section>
 <!-- product-tab ends -->
-<app-related-products></app-related-products>
+
 <app-bought-together></app-bought-together>
+<why-low-price-modal></why-low-price-modal>
 <toolots-review-modal></toolots-review-modal>

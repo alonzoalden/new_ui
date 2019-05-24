@@ -2,11 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../../../shared/classes/product';
 
 @Component({
-  selector: 'app-popular-products',
+  selector: 'toolots-app-popular-products',
   templateUrl: './popular-products.component.html',
   styleUrls: ['./popular-products.component.scss']
 })
-export class PopularProductsComponent implements OnInit {
+export class ToolotsPopularProductsComponent implements OnInit {
   
      // Get product Using Input
   @Input() products: Product;

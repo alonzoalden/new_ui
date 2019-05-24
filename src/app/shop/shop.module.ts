@@ -24,6 +24,14 @@ import { FilterProductsComponent } from './home-13/filter-products/filter-produc
 import { ProductTabThirteenComponent } from './home-13/product-tab/product-tab.component';
 import { LogoThirteenComponent } from './home-13/logo/logo.component';
 
+import { ToolotsCollectionSliderThirteenComponent } from './toolots/collection-slider/collection-slider.component';
+import { ToolotsPopularProductsComponent } from './toolots/popular-products/popular-products.component';
+import { ToolotsFilterProductsComponent } from './toolots/filter-products/filter-products.component';
+import { ToolotsProductTabThirteenComponent } from './toolots/product-tab/product-tab.component';
+import { ToolotsLogoThirteenComponent } from './toolots/logo/logo.component';
+
+
+
 // Products Components 
 import { ProductComponent } from './product/product.component';
 import { ProductBoxComponent } from './product/product-box/product-box.component';
@@ -57,6 +65,7 @@ import { NewProductComponent } from './product/widgets/new-product/new-product.c
 import { FrequentlyBoughtProductComponent } from './product/widgets/frequently-bought-product/frequently-bought-product.component';
 
 import { ToolotsReviewModalComponent } from './product/widgets/toolots-review-modal/toolots-review-modal.component';
+import { WhyLowPriceModalComponent } from './product/widgets/why-low-price-modal/why-low-price-modal.component';
 
 import { SearchComponent } from './product/search/search.component';
 import { ProductCompareComponent } from './product/product-compare/product-compare.component';
@@ -91,6 +100,12 @@ import { AboutToolotsComponent } from './toolots/about/about.component'
     LightboxModule
   ],
   declarations: [
+    ToolotsCollectionSliderThirteenComponent,
+    ToolotsPopularProductsComponent,
+    ToolotsFilterProductsComponent,
+    ToolotsProductTabThirteenComponent,
+    ToolotsLogoThirteenComponent,
+    WhyLowPriceModalComponent,
     ToolotsReviewModalComponent,
     ToolotsSliderComponent,
     AboutToolotsComponent,

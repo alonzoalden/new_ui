@@ -16,20 +16,7 @@ export class HomeToolotsComponent implements OnInit, OnDestroy {
   
 
   ngOnInit() {
-      document.body.addEventListener('click', function handler() {
-        
-        var promise = document.querySelector('video').play();
-        if (promise !== undefined) {
-        promise.then(() => {
-            console.log ("Auto-play started from click event");
-            this.removeEventListener('click', handler);
-            
-        }).catch((error) => {
-            console.log ("Auto-play failed click event", error)
-        });
-      }
-});
-
+      
     
   	this.productsService.getProducts().subscribe(product => { 
   	  product.filter((item: Product) => {

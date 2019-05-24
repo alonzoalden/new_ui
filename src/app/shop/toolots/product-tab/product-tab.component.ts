@@ -3,11 +3,11 @@ import { Product } from '../../../shared/classes/product';
 declare var $: any;
 
 @Component({
-  selector: 'app-product-tab-thirteen',
+  selector: 'toolots-app-product-tab-thirteen',
   templateUrl: './product-tab.component.html',
   styleUrls: ['./product-tab.component.scss']
 })
-export class ProductTabThirteenComponent implements OnInit {
+export class ToolotsProductTabThirteenComponent implements OnInit {
   
   // Get product Using Input
   @Input() products: Product;

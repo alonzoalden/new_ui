@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-logo-thirteen',
+  selector: 'toolots-app-logo-thirteen',
   templateUrl: './logo.component.html',
   styleUrls: ['./logo.component.scss']
 })
-export class LogoThirteenComponent implements OnInit {
+export class ToolotsLogoThirteenComponent implements OnInit {
 
   constructor() { }
 

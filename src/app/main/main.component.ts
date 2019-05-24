@@ -27,17 +27,19 @@ export class MainComponent implements OnInit {
    $.getScript('assets/js/script.js');
    document.body.addEventListener('click', function handler() {
         
-    var promise = document.querySelector('video').play();
-    if (promise !== undefined) {
-    promise.then(() => {
-        console.log ("Auto-play started from click event");
-        this.removeEventListener('click', handler);
-        
-    }).catch((error) => {
-        console.log ("Auto-play failed click event", error)
+    if (document.querySelector('video')) {
+        var promise = document.querySelector('video').play();
+        if (promise !== undefined) {
+        promise.then(() => {
+            console.log ("Auto-play started from click event");
+            this.removeEventListener('click', handler);
+            
+        }).catch((error) => {
+            console.log ("Auto-play failed click event", error)
+        });
+      }
+      }
     });
-  }
-});
 
    
   }

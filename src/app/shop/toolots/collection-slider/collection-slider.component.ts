@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-collection-slider-thirteen',
+  selector: 'toolots-app-collection-slider-thirteen',
   templateUrl: './collection-slider.component.html',
   styleUrls: ['./collection-slider.component.scss']
 })
-export class CollectionSliderThirteenComponent implements OnInit {
+export class ToolotsCollectionSliderThirteenComponent implements OnInit {
 
    // DomSanitizer for safe html content.
   constructor(private _sanitizer:DomSanitizer) { }
