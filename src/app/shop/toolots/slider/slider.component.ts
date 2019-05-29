@@ -16,18 +16,18 @@ export class ToolotsSliderComponent implements OnInit {
   ngAfterViewInit(){
     
 
-      var promise = document.querySelector('video').play();
+      // var promise = document.querySelector('video').play();
       
-      if (promise !== undefined) {
-          promise.then(val => {
-              console.log ("Auto-play started from slider component", val);
-              // Auto-play was failed
-          }).catch((error) => {
-              console.log ("Auto-play failed slider component", error)
-              // Auto-play started
-              document.querySelector('video').play();
-          });
-      }
+      // if (promise !== undefined) {
+      //     promise.then(val => {
+      //         console.log ("Auto-play started from slider component", val);
+      //         // Auto-play was failed
+      //     }).catch((error) => {
+      //         console.log ("Auto-play failed slider component", error)
+      //         // Auto-play started
+      //         document.querySelector('video').play();
+      //     });
+      // }
     
     
   }

@@ -72,6 +72,11 @@ $material-icons-font-path: '~material-icons/iconfont/';
     justify-content: center;
     overflow: hidden;
 }
+.slider-contain {
+    height: 50vh !important;
+    margin-left: 0px !important;
+    margin-top: -5px !important; 
+}
 @media (max-width: 900px) {
     .toolots-video {
         position: relative;
@@ -85,6 +90,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
         width: 100%;
         height: auto !important;
         background-color: rgba(20, 20, 20, 1);
+        
     }
 }
 @media (max-width: 1201px) {
@@ -408,4 +414,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
 }
 .product-right .border-product {
     padding-bottom: 5px;
+}
+.bg-lg-black {
+    background: linear-gradient(#111111, #444444);
 }
