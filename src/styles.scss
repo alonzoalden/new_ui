@@ -437,6 +437,10 @@ $material-icons-font-path: '~material-icons/iconfont/';
 .menu-right {
     flex: 1;
 }
+.main-menu .menu-left {
+    justify-content: center;
+    padding-left: 70px;
+}
 @media (max-width: 578px) {
     .menu-right {
         flex: initial;
