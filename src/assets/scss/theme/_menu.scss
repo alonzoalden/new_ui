@@ -778,13 +778,13 @@ $theme-deafult__toggle-spacing: floor($theme-deafult__item-height * 0.1);
       }
     }
     .full-mega-menu {
-      left: 50% !important;
-      -webkit-transform: translateX(-50%);
-      transform: translateX(-50%);
-      position: fixed;
+      //left: 50% !important;
+      //-webkit-transform: translateX(-50%);
+      //transform: translateX(-50%);
+      //position: fixed;
       &.center-mega-menu {
-        left: 50% !important;
-        transform: translateX(-50%);
+        //left: 50% !important;
+        //transform: translateX(-50%);
       }
     }
     .category-menu {
@@ -861,9 +861,11 @@ $theme-deafult__toggle-spacing: floor($theme-deafult__item-height * 0.1);
       overflow: hidden;
       background: $theme-deafult__desktop-sub-bg;
       height: 20px;
+      width: 100% !important;
     }
     .scroll-up-arrow,
     .scroll-down-arrow {
+      width: 100% !important;
       position: absolute;
       top: -2px;
       left: 50%;

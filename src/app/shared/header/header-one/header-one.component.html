@@ -10,7 +10,7 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="main-menu">
-					<div class="menu-left">
+					<div class="menu-left" style="flex: 1;">
 						<div class="navbar">
 							<a (click)="openNav()">
 								<div class="bar-style"> 
@@ -37,13 +37,13 @@
 							</a>
 						</div>
 					</div>
-					<div class="nav-search-1">
-								<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Search a Product by Keyword, SKU or TPIN" style="width: 100% !important;">
-								<button class="searchbutton">
-										<i style="color: #fff; font-size: 20px;" class="fa fa-search" aria-hidden="true"></i>
-								</button>
-						</div>
-					<div class="menu-right pull-right">
+					<div class="nav-search-1" style="flex: 2; padding-left: 20px;">
+							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Search a Product by Keyword, SKU or TPIN" style="width: 100% !important;">
+							<button class="searchbutton">
+									<i style="color: #fff; font-size: 20px;" class="fa fa-search" aria-hidden="true"></i>
+							</button>
+					</div>
+					<div class="menu-right pull-right" style="padding-left: 30px;">
 						<div>
 							<app-navbar></app-navbar>
 						</div>

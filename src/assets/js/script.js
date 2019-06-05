@@ -1,6 +1,7 @@
 "use strict";
 $(document).ready(function() {
 
+
   /*=====================
    01.Pre loader
    ==========================*/

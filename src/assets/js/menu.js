@@ -9,5 +9,6 @@ $(document).ready(function() {
       subMenusSubOffsetX: 1,
       subMenusSubOffsetY: -8,
       noMouseOver: true
-  })
+  });
+  
 });

@@ -9,7 +9,28 @@
     <li class="onhover-div mobile-setting">
       <div>
         <!-- <img src="assets/images/icon/cog-solid.svg" class="img-fluid" alt=""> -->
-        <span class="material-icons" style="color: #fafafa;">settings</span>
+        <a [routerLink]="">
+          <span class="material-icons" style="color: #fafafa;">face</span>
+        </a>
+        <!-- <i class="ti-settings"></i> -->
+      </div>
+      <div class="show-div setting">
+        <h6>My Account</h6>
+        <!-- <h6 *ngIf="!productsService?.catalogMode">currency</h6> -->
+        <ul class="list-inline" *ngIf="!productsService?.catalogMode">
+          <li><a [routerLink]="" (click)="updateCurrency('USD')">Wishlist</a> </li>
+          <li><a [routerLink]="" (click)="updateCurrency('EUR')">Favorites</a> </li>
+          <li><a [routerLink]="" (click)="updateCurrency('INR')">Order History</a> </li>
+          <li><a [routerLink]="" (click)="updateCurrency('GBP')">Settings</a> </li>
+        </ul>
+      </div>
+    </li>
+    <li class="onhover-div mobile-setting">
+      <div>
+        <!-- <img src="assets/images/icon/cog-solid.svg" class="img-fluid" alt=""> -->
+        <a [routerLink]="">
+          <span class="material-icons" style="color: #fafafa;">settings</span>
+        </a>
         <!-- <i class="ti-settings"></i> -->
       </div>
       <div class="show-div setting">

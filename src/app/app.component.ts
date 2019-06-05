@@ -13,6 +13,10 @@ export class AppComponent implements OnInit {
       translate.addLangs(['en', 'fr']);
    }
    ngOnInit(){
-     
+      $(document).ready(function() {
+         $(function() {
+            $('ul.navbar-nav:not([data-sm-skip])').unbind('hide.smapi');
+          });
+      });
    }
 }

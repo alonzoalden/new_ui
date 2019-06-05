@@ -38,81 +38,81 @@ export const MENUITEMS: Menu[] = [
 	//       { path: '/home/no-sidebar/collection/all', title: 'category-no-sidebar', image: 'assets/images/feature/category-page(no-sidebar).jpg', type: 'link' }
 	//     ]
 	// },
-	// {
-	// 	title: 'shop by industry', type: 'sub', megaMenu: true, megaMenuType: 'large', children: [
-	//       { 
-	//       	title: '',  type: 'link', children: [
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'Abrasives', image: '../../../../../assets/images/tools/product/2.jpg',  type: 'link' },
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'Food Processing Industry', image: '../../../../../assets/images/tools/product/1.jpg',  type: 'link' },
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'Janitorial and Cleaning', image: '../../../../../assets/images/tools/product/2.jpg',  type: 'link' },
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'Measuring & Inspecting', image: '../../../../../assets/images/tools/product/8.jpg',  type: 'link' },
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'Packaging Machines', image: '../../../../../assets/images/tools/category/2.jpg',  type: 'link' },
-	// 					{ path: '/home/left-sidebar/collection/all', title: 'Raw Materials', image: '../../../../../assets/images/tools/category/3.jpg',  type: 'link' },
-	// 					{ path: '/home/left-sidebar/collection/all', title: 'Tools', image: '../../../../../assets/images/tools/category/4.jpg',  type: 'link' }
-	//       	]
-	//       },
-	//       { 
-	//       	title: '',  type: 'link', children: [
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'Advertisoing Signage Industry', image: '../../../../../assets/images/tools/product/3.jpg',  type: 'link' },
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'HVAC & Refrigeration', image: '../../../../../assets/images/tools/product/12.jpg',  type: 'link' },
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'Lab Equipment', image: '../../../../../assets/images/tools/product/2.jpg',  type: 'link' },
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'Metal Machine Tool Industry', image: '../../../../../assets/images/tools/category/1.jpg',  type: 'link' },
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'Pharmaceutical Equipment', image: '../../../../../assets/images/tools/category/2.jpg',  type: 'link' },
-	// 					{ path: '/home/left-sidebar/collection/all', title: 'Restoration and Cleaning Industry', image: '../../../../../assets/images/tools/category/3.jpg',  type: 'link' },
-	// 					{ path: '/home/left-sidebar/collection/all', title: 'Welding & Soldering Equipment', image: '../../../../../assets/images/tools/category/4.jpg',  type: 'link' }
-	//       	]
-	//       },
-	//       { 
-	//       	title: '',  type: 'link', children: [
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'Automotive', image: '../../../../../assets/images/tools/product/1.jpg',  type: 'link' },
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'Hydraulics', image: '../../../../../assets/images/tools/product/10.jpg',  type: 'link' },
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'Lighting & Electrical', image: '../../../../../assets/images/tools/product/9.jpg',  type: 'link' },
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'Metrology', image: '../../../../../assets/images/tools/product/8.jpg', type: 'link' },
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'Plastic machinery Industry', image: '../../../../../assets/images/tools/category/2.jpg',  type: 'link' },
-	// 					{ path: '/home/left-sidebar/collection/all', title: 'Rubber Machinery', image: '../../../../../assets/images/tools/category/2.jpg',  type: 'link' },
-	// 					{ path: '/home/left-sidebar/collection/all', title: 'Woodworking Industry',image: '../../../../../assets/images/tools/category/2.jpg',   type: 'link' }
-	//       	]
-	//       },
-	//       { 
-	//       	title: '',  type: 'link', children: [
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'Construction Industry', image: '../../../../../assets/images/tools/product/10.jpg',  type: 'link' },
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'Hydroelectriuc Power Industry', image: '../../../../../assets/images/tools/product/11.jpg',  type: 'link' },
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'Linear Motion', image: '../../../../../assets/images/tools/category/1.jpg',  type: 'link' },
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'Components', image: '../../../../../assets/images/tools/category/3.jpg',  type: 'link' },
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'Oilfield Equipment', image: '../../../../../assets/images/tools/category/4.jpg',  type: 'link' },
-	// 					{ path: '/home/left-sidebar/collection/all', title: 'Pneumatics', image: '../../../../../assets/images/tools/category/5.jpg',  type: 'link' },
-	// 					{ path: '/home/left-sidebar/collection/all', title: 'Safety', image: '../../../../../assets/images/tools/product/7.jpg',  type: 'link' }
-	//       	]
-	//       },
-	//       { 
-	//       	title: '',  type: 'link', children: [
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'Cutting Machines',  image: '../../../../../assets/images/tools/product/5.jpg', type: 'link' },
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'Industrial Paint Application', image: '../../../../../assets/images/tools/product/6.jpg',   type: 'link' },
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'Material Handling & Storage', image: '../../../../../assets/images/tools/product/7.jpg',  type: 'link' },
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'Outdoor Equipment', image: '../../../../../assets/images/tools/product/9.jpg',  type: 'link' },
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'Power Transmission', image: '../../../../../assets/images/tools/product/8.jpg',  type: 'link' },
-	// 	      	{ path: '/home/left-sidebar/collection/all', title: 'School & Office Supplies', image: '../../../../../assets/images/tools/category/2.jpg',  type: 'link' }
-	//       	]
-	//       },
-	//     ]
-	// },
 	{
-		title: 'My Account', type: 'sub', children: [
-				{ path: '/home/left-sidebar/product/1', title: 'wishlist',  type: 'link' },
-				{ path: '/home/left-sidebar/product/1', title: 'favorites',  type: 'link' },
-				{ path: '/home/left-sidebar/product/1', title: 'order history',  type: 'link' },
-				{ path: '/home/left-sidebar/product/1', title: 'settings',  type: 'link' },
-	      // { path: '/home/right-sidebar/product/1', title: 'right-sidebar',  type: 'link' },
-	      // { path: '/home/no-sidebar/product/1', title: 'no-sidebar',   type: 'link' },
-	      // { path: '/home/col-left/product/1', title: '3-asdfl-left',  type: 'link' },
-	      // { path: '/home/col-right/product/1', title: '3-col-thumbnail-right', type: 'link' },
-	      // { path: '/home/column/product/1', title: 'thumbnail-below', type: 'link' },
-	      // { path: '/home/accordian/product/1', title: 'accordian-details', type: 'link' },
-	      // { path: '/home/left-image/product/1', title: 'thumbnail-left', type: 'link' },
-	      // { path: '/home/right-image/product/1', title: 'thumbnail-right', type: 'link' },
-	      // { path: '/home/vertical/product/1', title: 'vertical-tab', type: 'link' }
+		title: 'shop industry', type: 'sub', megaMenu: true, megaMenuType: 'large', children: [
+	      { 
+	      	title: '',  type: 'link', children: [
+		      	{ path: '/home/left-sidebar/collection/all', title: 'Abrasives', image: '../../../../../assets/images/tools/product/2.jpg',  type: 'link' },
+		      	{ path: '/home/left-sidebar/collection/all', title: 'Food Processing Industry', image: '../../../../../assets/images/tools/product/1.jpg',  type: 'link' },
+		      	{ path: '/home/left-sidebar/collection/all', title: 'Janitorial and Cleaning', image: '../../../../../assets/images/tools/product/2.jpg',  type: 'link' },
+		      	{ path: '/home/left-sidebar/collection/all', title: 'Measuring & Inspecting', image: '../../../../../assets/images/tools/product/8.jpg',  type: 'link' },
+		      	{ path: '/home/left-sidebar/collection/all', title: 'Packaging Machines', image: '../../../../../assets/images/tools/category/2.jpg',  type: 'link' },
+						{ path: '/home/left-sidebar/collection/all', title: 'Raw Materials', image: '../../../../../assets/images/tools/category/3.jpg',  type: 'link' },
+						{ path: '/home/left-sidebar/collection/all', title: 'Tools', image: '../../../../../assets/images/tools/category/4.jpg',  type: 'link' }
+	      	]
+	      },
+	      { 
+	      	title: '',  type: 'link', children: [
+		      	{ path: '/home/left-sidebar/collection/all', title: 'Advertisoing Signage Industry', image: '../../../../../assets/images/tools/product/3.jpg',  type: 'link' },
+		      	{ path: '/home/left-sidebar/collection/all', title: 'HVAC & Refrigeration', image: '../../../../../assets/images/tools/product/12.jpg',  type: 'link' },
+		      	{ path: '/home/left-sidebar/collection/all', title: 'Lab Equipment', image: '../../../../../assets/images/tools/product/2.jpg',  type: 'link' },
+		      	{ path: '/home/left-sidebar/collection/all', title: 'Metal Machine Tool Industry', image: '../../../../../assets/images/tools/category/1.jpg',  type: 'link' },
+		      	{ path: '/home/left-sidebar/collection/all', title: 'Pharmaceutical Equipment', image: '../../../../../assets/images/tools/category/2.jpg',  type: 'link' },
+						{ path: '/home/left-sidebar/collection/all', title: 'Restoration and Cleaning Industry', image: '../../../../../assets/images/tools/category/3.jpg',  type: 'link' },
+						{ path: '/home/left-sidebar/collection/all', title: 'Welding & Soldering Equipment', image: '../../../../../assets/images/tools/category/4.jpg',  type: 'link' }
+	      	]
+	      },
+	      { 
+	      	title: '',  type: 'link', children: [
+		      	{ path: '/home/left-sidebar/collection/all', title: 'Automotive', image: '../../../../../assets/images/tools/product/1.jpg',  type: 'link' },
+		      	{ path: '/home/left-sidebar/collection/all', title: 'Hydraulics', image: '../../../../../assets/images/tools/product/10.jpg',  type: 'link' },
+		      	{ path: '/home/left-sidebar/collection/all', title: 'Lighting & Electrical', image: '../../../../../assets/images/tools/product/9.jpg',  type: 'link' },
+		      	{ path: '/home/left-sidebar/collection/all', title: 'Metrology', image: '../../../../../assets/images/tools/product/8.jpg', type: 'link' },
+		      	{ path: '/home/left-sidebar/collection/all', title: 'Plastic machinery Industry', image: '../../../../../assets/images/tools/category/2.jpg',  type: 'link' },
+						{ path: '/home/left-sidebar/collection/all', title: 'Rubber Machinery', image: '../../../../../assets/images/tools/category/2.jpg',  type: 'link' },
+						{ path: '/home/left-sidebar/collection/all', title: 'Woodworking Industry',image: '../../../../../assets/images/tools/category/2.jpg',   type: 'link' }
+	      	]
+	      },
+	      { 
+	      	title: '',  type: 'link', children: [
+		      	{ path: '/home/left-sidebar/collection/all', title: 'Construction Industry', image: '../../../../../assets/images/tools/product/10.jpg',  type: 'link' },
+		      	{ path: '/home/left-sidebar/collection/all', title: 'Hydroelectriuc Power Industry', image: '../../../../../assets/images/tools/product/11.jpg',  type: 'link' },
+		      	{ path: '/home/left-sidebar/collection/all', title: 'Linear Motion', image: '../../../../../assets/images/tools/category/1.jpg',  type: 'link' },
+		      	{ path: '/home/left-sidebar/collection/all', title: 'Components', image: '../../../../../assets/images/tools/category/3.jpg',  type: 'link' },
+		      	{ path: '/home/left-sidebar/collection/all', title: 'Oilfield Equipment', image: '../../../../../assets/images/tools/category/4.jpg',  type: 'link' },
+						{ path: '/home/left-sidebar/collection/all', title: 'Pneumatics', image: '../../../../../assets/images/tools/category/5.jpg',  type: 'link' },
+						{ path: '/home/left-sidebar/collection/all', title: 'Safety', image: '../../../../../assets/images/tools/product/7.jpg',  type: 'link' }
+	      	]
+	      },
+	      { 
+	      	title: '',  type: 'link', children: [
+		      	{ path: '/home/left-sidebar/collection/all', title: 'Cutting Machines',  image: '../../../../../assets/images/tools/product/5.jpg', type: 'link' },
+		      	{ path: '/home/left-sidebar/collection/all', title: 'Industrial Paint Application', image: '../../../../../assets/images/tools/product/6.jpg',   type: 'link' },
+		      	{ path: '/home/left-sidebar/collection/all', title: 'Material Handling & Storage', image: '../../../../../assets/images/tools/product/7.jpg',  type: 'link' },
+		      	{ path: '/home/left-sidebar/collection/all', title: 'Outdoor Equipment', image: '../../../../../assets/images/tools/product/9.jpg',  type: 'link' },
+		      	{ path: '/home/left-sidebar/collection/all', title: 'Power Transmission', image: '../../../../../assets/images/tools/product/8.jpg',  type: 'link' },
+		      	{ path: '/home/left-sidebar/collection/all', title: 'School & Office Supplies', image: '../../../../../assets/images/tools/category/2.jpg',  type: 'link' }
+	      	]
+	      },
 	    ]
 	},
+	// {
+	// 	title: 'account', type: 'sub', children: [
+	// 			{ path: '/home/left-sidebar/product/1', title: 'wishlist',  type: 'link' },
+	// 			{ path: '/home/left-sidebar/product/1', title: 'favorites',  type: 'link' },
+	// 			{ path: '/home/left-sidebar/product/1', title: 'order history',  type: 'link' },
+	// 			{ path: '/home/left-sidebar/product/1', title: 'settings',  type: 'link' },
+	//       // { path: '/home/right-sidebar/product/1', title: 'right-sidebar',  type: 'link' },
+	//       // { path: '/home/no-sidebar/product/1', title: 'no-sidebar',   type: 'link' },
+	//       // { path: '/home/col-left/product/1', title: '3-asdfl-left',  type: 'link' },
+	//       // { path: '/home/col-right/product/1', title: '3-col-thumbnail-right', type: 'link' },
+	//       // { path: '/home/column/product/1', title: 'thumbnail-below', type: 'link' },
+	//       // { path: '/home/accordian/product/1', title: 'accordian-details', type: 'link' },
+	//       // { path: '/home/left-image/product/1', title: 'thumbnail-left', type: 'link' },
+	//       // { path: '/home/right-image/product/1', title: 'thumbnail-right', type: 'link' },
+	//       // { path: '/home/vertical/product/1', title: 'vertical-tab', type: 'link' }
+	//     ]
+	// },
 	// {
 	// 	title: 'After-Sales', type: 'link', path: '/home/left-sidebar/product/1'
 	// }

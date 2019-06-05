@@ -9544,6 +9544,8 @@ body.rtl {
     border-width: 8px;
     border-style: dashed dashed solid dashed;
     border-color: transparent transparent #ff3522 transparent;
+    content: "\f105";
+    font-family: FontAwesome;
   }
   .pixelstrap .scroll-down-arrow {
     top: 6px;

@@ -214,7 +214,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
 }
 
 .collection-collapse-block .collection-collapse-block-content .collection-brand-filter .category-list li a {
-    color: #111;
+    //color: #111;
     // letter-spacing: 0.4px;
  
 }
@@ -261,11 +261,10 @@ $material-icons-font-path: '~material-icons/iconfont/';
     height: 40px !important;
 }
 .nav-search-1 {
-    width: 100%;
+    // width: 32%;
     display: flex;
     align-items: center;
-    padding-right: 40px;
-    padding-left: 15px;
+    
 }   
 .nav-search-2 {
     width: 100%;
@@ -418,3 +417,78 @@ $material-icons-font-path: '~material-icons/iconfont/';
 .bg-lg-black {
     background: linear-gradient(#111111, #444444);
 }
+.pixelstrap .full-mega-menu {
+    width: 100% !important;
+    transform: intial !important;
+    padding: 30px 0 0 0 !important;
+}
+.mega-box {
+    border-right: 1px solid #ddd;
+}
+.mega-box:last-of-type {
+    border: none;
+}
+.menu-content li {
+    transition: all 80ms ease-in-out;
+}
+.menu-content li a span:hover {
+    color: #ffa928;
+}
+.menu-right {
+    flex: 1;
+}
+@media (max-width: 578px) {
+    .menu-right {
+        flex: initial;
+    }
+}
+.sm.pixelstrap.sm-horizontal {
+    background-color: #111;
+}
+.mobile-back.text-right {
+    color: #eee;
+}
+@media (max-width: 1200px) {
+    .pixelstrap ul li:first-child {
+        border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+    }
+}
+.dropdown-hover-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #eee;
+    transition: all 70ms ease-in-out;
+}
+.dropdown-hover-item .detail {
+
+    width: 100%;
+    text-align: center;
+    background-color: #aaa;
+    color: #fff; 
+    font-size: 15px;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: all 70ms ease-in-out;
+}
+
+
+.dropdown-hover-item:hover .detail {
+    background-color: #222 !important;
+    color: #ffa928 !important;
+    
+}
+.scroll-up,
+.scroll-down {
+    margin-left: 0 !important;
+}
+.pixelstrap .scroll-up-arrow, .pixelstrap .scroll-down-arrow {
+    left: 0 !important;
+    content: "\f105";
+    font-family: FontAwesome;
+}
+// .mega-menu .full-mega-menu .sm-nowrap {
+//     transform: initial !important;
+// }

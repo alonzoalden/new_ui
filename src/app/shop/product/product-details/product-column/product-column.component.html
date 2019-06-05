@@ -6,7 +6,7 @@
                 <nav aria-label="breadcrumb" class="theme-breadcrumb">
                     <ol class="breadcrumb" style="justify-content: flex-start;">
                         <li class="breadcrumb-item"><a [routerLink]="'/home/one'">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">commercial kitchen appliances</li>
+                        <li class="breadcrumb-item active" aria-current="page"><a [routerLink]="'/home/left-sidebar/collection/all'">commercial kitchen appliances</a></li>
                         <li class="breadcrumb-item active" aria-current="page">refrigerators</li>
 
                     </ol>
@@ -21,7 +21,7 @@
     <div class="collection-wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-9">
                     <div class="row">
                         <div class="col-lg-7">
                             <ngx-slick-carousel class="product-slick side-scroller main-photo" #slickModal="slick-carousel" [config]="slideConfig">
@@ -31,10 +31,10 @@
                                     </div>
                                 </div>
                             </ngx-slick-carousel>
-                            <div class="side-scroller full-width">
+                            <div class="side-scroller full-width" style="margin-top: 10px;">
                                 <ngx-slick-carousel *ngIf="isLoaded" class="slider-nav icon-display" #slickModal="slick-carousel" [config]="slideNavConfig" style="display: flex; align-items: center;">
-                                    <div ngxSlickItem *ngFor="let image of product.pictures" style="">
-                                        <div >
+                                    <div ngxSlickItem *ngFor="let image of product.pictures">
+                                        <div>
                                             <img [src]="image" alt="" class="img-fluid">
                                         </div>
                                     </div>
@@ -104,7 +104,7 @@
                         <!-- <button (click)="changeConfig()"></button> -->
                     </div>
                 </div>
-                <div class="col-lg-4" *ngIf="!productsService?.catalogMode">
+                <div class="col-lg-3" *ngIf="!productsService?.catalogMode">
                     <div class="product-right product-form-box">
                         <h4><del>{{product.salePrice | currency:productsService?.currency:'symbol'}}</del><span>{{product.discount}}% off</span></h4>
                         <h3>{{product.price | currency:productsService?.currency:'symbol'}}</h3>
@@ -158,7 +158,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="product-buttons" style="text-align: center; width: 55%; display: inline-block; margin-bottom: 0px;">
+                        <div class="product-buttons" style="text-align: center; width: 60%; display: inline-block; margin-bottom: 0px;">
                             <a [routerLink]="" style="width: 100%; display: block; text-align: center; margin-bottom: 10px; " (click)="addToCart(product, counter)" class="btn btn-solid" [class.disabled]="counter > product.stock">add to cart</a>
                             <a [routerLink]="" style="width: 100%; display: block; text-align: center; margin-left: 0;" (click)="buyNow(product, counter)" class="btn btn-solid" [class.disabled]="counter > product.stock">buy now</a>
                         </div>
