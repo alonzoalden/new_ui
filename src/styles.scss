@@ -75,7 +75,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
 .slider-contain {
     height: 50vh !important;
     margin-left: 0px !important;
-    margin-top: -5px !important; 
+    margin-top: -5px !important;
 }
 @media (max-width: 900px) {
     .toolots-video {
@@ -90,13 +90,13 @@ $material-icons-font-path: '~material-icons/iconfont/';
         width: 100%;
         height: auto !important;
         background-color: rgba(20, 20, 20, 1);
-        
+
     }
 }
 @media (max-width: 1201px) {
     .toolots-intro {
         height: auto;
-        
+
         align-self: start;
         margin: 14px;
         background-color: rgba(20, 20, 20, 0.7);
@@ -216,7 +216,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
 .collection-collapse-block .collection-collapse-block-content .collection-brand-filter .category-list li a {
     //color: #111;
     // letter-spacing: 0.4px;
- 
+
 }
 .quick-view-part > a {
     padding-top: 2px;
@@ -256,7 +256,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
     // background-color: #f4f4f4;
 }
 
-.nav-search-1 .form-control, 
+.nav-search-1 .form-control,
 .nav-search-2 .form-control {
     height: 40px !important;
 }
@@ -264,8 +264,8 @@ $material-icons-font-path: '~material-icons/iconfont/';
     // width: 32%;
     display: flex;
     align-items: center;
-    
-}   
+
+}
 .nav-search-2 {
     width: 100%;
     display: flex;
@@ -283,7 +283,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
     .nav-search-2 {
         display: none;
     }
-    
+
 
 }
 
@@ -360,7 +360,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
 }
 
 .side-scroller:hover .side-scroller-arrow {
-    
+
     opacity: 0.6;
     transition: all 200ms ease-in-out;
     transform: scale(1);
@@ -409,7 +409,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
     .product-right .product-buttons {
         width: 50% !important;
     }
-    
+
 }
 .product-right .border-product {
     padding-bottom: 5px;
@@ -439,12 +439,14 @@ $material-icons-font-path: '~material-icons/iconfont/';
     flex: 1;
 }
 .main-menu .menu-left {
-    justify-content: center;
     padding-left: 70px;
 }
 @media (max-width: 578px) {
     .menu-right {
         flex: initial;
+    }
+    .main-menu .menu-left {
+      padding-left: 20px;
     }
 }
 .sm.pixelstrap.sm-horizontal {
@@ -471,7 +473,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
     width: 100%;
     text-align: center;
     background-color: #aaa;
-    color: #fff; 
+    color: #fff;
     font-size: 15px;
     letter-spacing: 0.2px;
     white-space: nowrap;
@@ -483,7 +485,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
 .dropdown-hover-item:hover .detail {
     background-color: #222 !important;
     color: #ffa928 !important;
-    
+
 }
 .scroll-up,
 .scroll-down {
@@ -496,4 +498,24 @@ $material-icons-font-path: '~material-icons/iconfont/';
 }
 // .mega-menu .full-mega-menu .sm-nowrap {
 //     transform: initial !important;
+// }
+
+@media(max-width: 1200px) {
+  .hide-small {
+    display: none;
+  }
+}
+// .collapse, .collapse.in {
+//   display: block !important;
+//   transition: all .25s ease-in-out;
+// }
+
+// .collapse {
+//  opacity: 0;
+//  height: 0;
+// }
+
+// .collapse.in {
+//   opacity: 1;
+//   height: 100%;
 // }

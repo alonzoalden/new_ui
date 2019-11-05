@@ -10,7 +10,7 @@
                   <li class="breadcrumb-item active">cart</li>
                 </ol>
               </nav>
-          
+
         </div>
       </div>
       <!-- <div class="col-sm-6">
@@ -118,11 +118,13 @@
       </div>
     </div>
     <div class="row cart-buttons" *ngIf='shoppingCartItems.length'>
-      <div class="col-6">
+      <div class="col-4">
         <a [routerLink]="['/home/left-sidebar/collection/all']" class="btn btn-solid">continue shopping</a>
       </div>
-      <div class="col-6">
-        <a [routerLink]="['/home/checkout']" class="btn btn-solid">check out</a>
+      <div class="col-8">
+        <a [routerLink]="['/home/checkout']" class="btn btn-solid" style="padding: 10px 26px; margin-bottom: 10px;"><img src="../../assets/images/paypal-checkout-logo-medium.png" style="width: 142px;"></a>
+        <a [routerLink]="['/home/checkout']" class="btn btn-solid" style="padding: 10px 26px; margin-left: 10px; margin-bottom: 10px;"><img src="../../assets/images/ppcredit-logo-medium.png" style="width: 142px;"></a>
+        <a [routerLink]="['/home/checkout']" class="btn btn-solid" style="width: 200px; margin-left: 10px; margin-bottom: 10px;">check out</a>
       </div>
     </div>
   </div>

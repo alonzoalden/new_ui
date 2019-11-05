@@ -19,6 +19,11 @@
     </div>
 </div> -->
 <!-- breadcrumb End -->
+
+
+
+
+
 <section class="section-b-space">
     <div class="container padding-cls">
         <div class="checkout-page">
@@ -26,6 +31,414 @@
                 <form>
                     <div class="row">
                         <div class="col-lg-6 col-sm-12 col-xs-12">
+
+
+                          <div class="accordion" id="accordionExample">
+                              <div class="card">
+                                <div class="card-header" id="headingOne" style="display: flex; justify-content: space-between;">
+                                  <h2 class="mb-0">
+                                    
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"  aria-expanded="true" aria-controls="collapseOne">
+                                      Shipping Information
+                                    </button>
+
+                                  </h2>
+                                  <h2 *ngIf="!shippingComplete">
+                                    <i class="fa fa-exclamation-circle text-muted" style="font-size: 24px" tooltip="Please enter shipping information" show-delay="500"></i>
+                                  </h2>
+                                  <h2 *ngIf="shippingComplete">
+                                    <i class="fa fa-check-circle text-success" style="font-size: 24px" tooltip="Shipping information complete" show-delay="500"></i>
+                                  </h2>
+
+                                </div>
+
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                  <div class="card-body">
+                                      <!-- <ng-container *ngIf="shipping"> -->
+                                        <div class="checkout-title">
+                                            <h3>Please Choose</h3>
+                                        </div>
+                                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                            <div class="field-label">
+                                                <input [formControl]="checkoutFormShipping.controls['shipping']" [(ngModel)]="isShipping" [value]=true  style="margin-right:10px" type="radio" name="shipping" [checked]="isShipping" id="free-shipping">
+                                                <label for="free-shipping">Shipping</label>
+                                            </div>
+                                            <div class="field-label">
+                                                <input [formControl]="checkoutFormShipping.controls['shipping']" [(ngModel)]="isShipping" [value]=false  style="margin-right:10px" type="radio" name="shipping" id="local-pickup">
+                                                <label for="local-pickup">Local Pickup</label>
+                                            </div>
+
+
+                                            <!-- <ul class="sub-total">
+                                                <li *ngIf='checkOutItems.length'>
+                                                    Shipping 
+                                                <div class="shipping">
+                                                    <div class="shopping-option">
+                                                        <input type="radio" name="shipping" checked="checked" id="free-shipping">
+                                                        <label for="free-shipping">Shipping</label>
+                                                    </div>
+                                                    <div class="shopping-option">
+                                                        <input type="radio"  name="shipping" id="local-pickup">
+                                                        <label for="local-pickup">Local Pickup</label>
+                                                    </div>
+                                                </div>
+                                                </li>
+                                            </ul> -->
+                                        </div>
+                                        <ng-container *ngIf="checkoutFormShipping.value.shipping">
+                                            <div class="checkout-title animated fadeIn">
+                                                <h3>Shipping Address</h3>
+                                            </div>
+                                            <div class="row check-out animated fadeIn">
+                                              <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                                  <div class="field-label">Email Address</div>
+                                                  <input (input)="shippingComplete = false" (change)="captureEmail(emailInput);" type="text" #emailInput name="email" [formControl]="checkoutFormShipping.controls['email']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutFormShipping.controls.email.touched && checkoutFormShipping.controls.email.errors?.required" class="text text-danger">
+                                                  Email is required
+                                                  </div>
+                                                  <div *ngIf="checkoutFormShipping.controls.email.touched && checkoutFormShipping.controls.email.errors?.email" class="text text-danger">
+                                                  Invalid Email
+                                                  </div>
+                                              </div>
+                                              <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                                  <div class="field-label">Email Address</div>
+                                                  <input (input)="shippingComplete = false" (change)="captureEmail(emailInput);" type="text" #emailInput name="email" [formControl]="checkoutFormShipping.controls['email']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutFormShipping.controls.email.touched && checkoutFormShipping.controls.email.errors?.required" class="text text-danger">
+                                                  Email is required
+                                                  </div>
+                                                  <div *ngIf="checkoutFormShipping.controls.email.touched && checkoutFormShipping.controls.email.errors?.email" class="text text-danger">
+                                                  Invalid Email
+                                                  </div>
+                                              </div>
+                                              <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                                  <div class="field-label">Phone</div>
+                                                  <input type="text" name="phone" [formControl]="checkoutFormShipping.controls['phone']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutFormShipping.controls.phone.touched && checkoutFormShipping.controls.phone.errors?.required" class="text text-danger">
+                                                  Phone No is required.
+                                                  </div>
+                                                  <div *ngIf="checkoutFormShipping.controls.phone.touched && checkoutFormShipping.controls.phone.errors?.pattern" class="text text-danger">
+                                                  Phone No is must be number.
+                                                  </div>
+                                              </div>
+                                              <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                                  <div class="field-label">First Name</div>
+                                                  <input type="text" name="firstname" [formControl]="checkoutFormShipping.controls['firstname']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutFormShipping.controls.firstname.touched && checkoutFormShipping.controls.firstname.errors?.required" class="text text-danger">
+                                                  First Name is required.
+                                                  </div>
+                                                  <div *ngIf="checkoutFormShipping.controls.firstname.touched && checkoutFormShipping.controls.firstname.errors?.pattern" class="text text-danger">
+                                                  First Name must be an alphabates.
+                                                  </div>
+                                              </div>
+                                              <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                                  <div class="field-label">Last Name </div>
+                                                  <input type="text" name="lastname" [formControl]="checkoutFormShipping.controls['lastname']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutFormShipping.controls.lastname.touched && checkoutFormShipping.controls.lastname.errors?.required" class="text text-danger">
+                                                  Last Name is required.
+                                                  </div>
+                                                  <div *ngIf="checkoutFormShipping.controls.lastname.touched && checkoutFormShipping.controls.lastname.errors?.pattern" class="text text-danger">
+                                                  Last Name must be an alphabates.
+                                                  </div>
+                                              </div>
+                                              <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                                  <div class="field-label">Country</div>
+                                                  <select name="country" [formControl]="checkoutFormShipping.controls['country']">
+                                                      <option value="" selected>Select Country</option>
+                                                      <option value="India">India</option>
+                                                      <option value="USA">USA</option>
+                                                      <option value="Australia">Australia</option>
+                                                  </select>
+                                                  <div *ngIf="checkoutFormShipping.controls.country.touched && checkoutFormShipping.controls.country.errors?.required" class="text text-danger">
+                                                  Country is required
+                                                  </div>
+                                              </div>
+                                              <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                                  <div class="field-label">Address</div>
+                                                  <input type="text" name="address" [formControl]="checkoutFormShipping.controls['address']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutFormShipping.controls.address.touched && checkoutFormShipping.controls.address.errors?.required" class="text text-danger">
+                                                  Address is required
+                                                  </div>
+                                                  <div *ngIf="checkoutFormShipping.controls.address.touched && checkoutFormShipping.controls.address.errors?.maxlength" class="text text-danger">
+                                                  Maximum 50 character
+                                                  </div>
+                                              </div>
+                                              <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                                  <div class="field-label">Town/City</div>
+                                                  <input type="text" name="town" [formControl]="checkoutFormShipping.controls['town']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutFormShipping.controls.town.touched && checkoutFormShipping.controls.town.errors?.required" class="text text-danger">
+                                                  City is required
+                                                  </div>
+                                              </div>
+                                              <div class="form-group col-md-12 col-sm-6 col-xs-12">
+                                                  <div class="field-label">State</div>
+                                                  <input type="text" name="state" [formControl]="checkoutFormShipping.controls['state']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutFormShipping.controls.state.touched && checkoutFormShipping.controls.state.errors?.required" class="text text-danger">
+                                                  State is required
+                                                  </div>
+                                              </div>
+                                              <div class="form-group col-md-12 col-sm-6 col-xs-12">
+                                                  <div class="field-label">Postal Code</div>
+                                                  <input type="text" name="postalcode" [formControl]="checkoutFormShipping.controls['postalcode']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutFormShipping.controls.postalcode.touched && checkoutFormShipping.controls.postalcode.errors?.required" class="text text-danger">
+                                                  Postalcode is required
+                                                  </div>
+                                              </div>
+
+                                          </div>
+                                          <div class="row ">
+                                              <div class="col-12 text-right" >
+                                                  <!-- <button [ngStyle]="{ opacity: shippingComplete ? '0.4' : '1' }" class="btn btn-solid" (click)="onSaveShipping();" data-toggle="collapse" data-target="#collapseOne">UPDATE SHIPPING</button> -->
+                                                  <!-- <button data-toggle="tooltip" data-placement="left" title="Tooltip on left" *ngIf="!shippingComplete" class="btn btn-solid" (click)="onSaveShipping();" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="collapseOne collapseTwo" >UPDATE SHIPPING</button>
+                                                  <button data-toggle="tooltip" data-placement="left" title="Tooltip on left"  *ngIf="shippingComplete" disabled class="btn btn-solid" (click)="onSaveShipping();" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="collapseOne collapseTwo">UPDATE SHIPPING</button> -->
+                                                  <button data-toggle="tooltip" data-placement="left" title="Tooltip on left" *ngIf="!shippingComplete" class="btn btn-solid" (click)="onSaveShipping();" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">UPDATE SHIPPING</button>
+                                                  <button data-toggle="tooltip" data-placement="left" title="Tooltip on left"  *ngIf="shippingComplete" disabled class="btn btn-solid" (click)="onSaveShipping();" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">UPDATE SHIPPING</button>
+
+
+                                              </div>
+                                          </div>
+                                      </ng-container>
+                                      <ng-container *ngIf="!checkoutFormShipping.value.shipping">
+                                            <!-- <div class="checkout-title animated fadeInRight">
+                                                <h3>Shipping Address</h3>
+                                            </div> -->
+                                            <div class="row check-out animated fadeIn">
+                                              <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                                  <h3>Our address for local pickup is:</h3>
+
+                                                  <!-- <span class="label">Address:</span> -->
+                                                  
+                                                  <p style="font-size: 16px;">Toolots</p>
+                                                  <p style="font-size: 16px;">16300 Shoemaker Ave</p>
+                                                  <p style="font-size: 16px;">Cerritos, CA 90703</p>
+                                              </div>
+                                              <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206184.32799598138!2d-118.19209977907316!3d33.884441112189926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd2ce5e90a61e7%3A0x44df3e122b5c015b!2s16300%20Shoemaker%20Ave%2C%20Cerritos%2C%20CA%2090703!5e0!3m2!1sen!2sus!4v1572913152171!5m2!1sen!2sus" width="300" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                                              </div>
+                                          </div>
+                                          <div class="row ">
+                                              <div class="col-12 text-right" >
+                                                  <!-- <button [ngStyle]="{ opacity: shippingComplete ? '0.4' : '1' }" class="btn btn-solid" (click)="onSaveShipping();" data-toggle="collapse" data-target="#collapseOne">UPDATE SHIPPING</button> -->
+                                                  <!-- <button data-toggle="tooltip" data-placement="left" title="Tooltip on left" *ngIf="!shippingComplete" class="btn btn-solid" (click)="onSaveShipping();" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="collapseOne collapseTwo" >UPDATE SHIPPING</button>
+                                                  <button data-toggle="tooltip" data-placement="left" title="Tooltip on left"  *ngIf="shippingComplete" disabled class="btn btn-solid" (click)="onSaveShipping();" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="collapseOne collapseTwo">UPDATE SHIPPING</button> -->
+                                                  <button data-toggle="tooltip" data-placement="left" title="Tooltip on left" *ngIf="!shippingComplete" class="btn btn-solid" (click)="onSaveShipping();" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">UPDATE SHIPPING</button>
+                                                  <button data-toggle="tooltip" data-placement="left" title="Tooltip on left"  *ngIf="shippingComplete" disabled class="btn btn-solid" (click)="onSaveShipping();" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">UPDATE SHIPPING</button>
+
+
+                                              </div>
+                                          </div>
+                                      </ng-container>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="card">
+                                <div class="card-header" id="headingOne" style="display: flex; justify-content: space-between; ">
+                                  <h2 class="mb-0">
+                                    <button [disabled]="!shippingComplete" class="btn btn-link " type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                      Billing Information
+                                    </button>
+                                  </h2>
+                                  <h2 *ngIf="!billingComplete && shippingComplete">
+                                    <i class="fa fa-exclamation-circle text-muted" style="font-size: 24px" tooltip="Please enter billing information" show-delay="500"></i>
+                                  </h2>
+                                  <h2 *ngIf="billingComplete && shippingComplete">
+                                    <i class="fa fa-check-circle text-success" style="font-size: 24px" tooltip="Billing information complete" show-delay="500"></i>
+                                  </h2>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" #collapseTwo>
+                                  <div class="card-body">
+                                      <!-- <ng-container *ngIf="shipping"> -->
+                                          <div class="checkout-title">
+                                              <h3>Billing Address</h3>
+                                          </div>
+                                          <div class="row check-out">
+                                              <div class="form-group col-md-12 col-sm-12 col-xs-12 shopping-option">
+                                                  <input type="checkbox" name="same-shipping" id="same-shipping" class="" style="margin-right: 10px;" (click)="copyCheckoutForm();">
+                                                  <label class="field-label" for="free-shipping">Same as Shipping?</label>
+                                              </div>
+                                              <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                                  <div class="field-label">Email Address</div>
+                                                  <input (input)="billingComplete = false" (change)="captureEmail(emailInput);" type="text" #emailInput name="email" [formControl]="checkoutForm.controls['email']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutForm.controls.email.touched && checkoutForm.controls.email.errors?.required" class="text text-danger">
+                                                  Email is required
+                                                  </div>
+                                                  <div *ngIf="checkoutForm.controls.email.touched && checkoutForm.controls.email.errors?.email" class="text text-danger">
+                                                  Invalid Email
+                                                  </div>
+                                              </div>
+                                              <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                                  <div class="field-label">Phone</div>
+                                                  <input type="text" name="phone" [formControl]="checkoutForm.controls['phone']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutForm.controls.phone.touched && checkoutForm.controls.phone.errors?.required" class="text text-danger">
+                                                  Phone No is required.
+                                                  </div>
+                                                  <div *ngIf="checkoutForm.controls.phone.touched && checkoutForm.controls.phone.errors?.pattern" class="text text-danger">
+                                                  Phone No is must be number.
+                                                  </div>
+                                              </div>
+                                              <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                                  <div class="field-label">First Name</div>
+                                                  <input type="text" name="firstname" [formControl]="checkoutForm.controls['firstname']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutForm.controls.firstname.touched && checkoutForm.controls.firstname.errors?.required" class="text text-danger">
+                                                  First Name is required.
+                                                  </div>
+                                                  <div *ngIf="checkoutForm.controls.firstname.touched && checkoutForm.controls.firstname.errors?.pattern" class="text text-danger">
+                                                  First Name must be an alphabates.
+                                                  </div>
+                                              </div>
+                                              <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                                  <div class="field-label">Last Name </div>
+                                                  <input type="text" name="lastname" [formControl]="checkoutForm.controls['lastname']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutForm.controls.lastname.touched && checkoutForm.controls.lastname.errors?.required" class="text text-danger">
+                                                  Last Name is required.
+                                                  </div>
+                                                  <div *ngIf="checkoutForm.controls.lastname.touched && checkoutForm.controls.lastname.errors?.pattern" class="text text-danger">
+                                                  Last Name must be an alphabates.
+                                                  </div>
+                                              </div>
+                                              <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                                  <div class="field-label">Country</div>
+                                                  <select name="country" [formControl]="checkoutForm.controls['country']">
+                                                      <option value="" selected>Select Country</option>
+                                                      <option value="India">India</option>
+                                                      <option value="USA">USA</option>
+                                                      <option value="Australia">Australia</option>
+                                                  </select>
+                                                  <div *ngIf="checkoutForm.controls.country.touched && checkoutForm.controls.country.errors?.required" class="text text-danger">
+                                                  Country is required
+                                                  </div>
+                                              </div>
+                                              <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                                  <div class="field-label">Address</div>
+                                                  <input type="text" name="address" [formControl]="checkoutForm.controls['address']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutForm.controls.address.touched && checkoutForm.controls.address.errors?.required" class="text text-danger">
+                                                  Address is required
+                                                  </div>
+                                                  <div *ngIf="checkoutForm.controls.address.touched && checkoutForm.controls.address.errors?.maxlength" class="text text-danger">
+                                                  Maximum 50 character
+                                                  </div>
+                                              </div>
+                                              <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                                  <div class="field-label">Town/City</div>
+                                                  <input type="text" name="town" [formControl]="checkoutForm.controls['town']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutForm.controls.town.touched && checkoutForm.controls.town.errors?.required" class="text text-danger">
+                                                  City is required
+                                                  </div>
+                                              </div>
+                                              <div class="form-group col-md-12 col-sm-6 col-xs-12">
+                                                  <div class="field-label">State</div>
+                                                  <input type="text" name="state" [formControl]="checkoutForm.controls['state']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutForm.controls.state.touched && checkoutForm.controls.state.errors?.required" class="text text-danger">
+                                                  State is required
+                                                  </div>
+                                              </div>
+                                              <div class="form-group col-md-12 col-sm-6 col-xs-12">
+                                                  <div class="field-label">Postal Code</div>
+                                                  <input type="text" name="postalcode" [formControl]="checkoutForm.controls['postalcode']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutForm.controls.postalcode.touched && checkoutForm.controls.postalcode.errors?.required" class="text text-danger">
+                                                  Postalcode is required
+                                                  </div>
+                                              </div>
+                                          </div>
+
+                                          <div class="checkout-title">
+                                            <h3>Enter Credit Card</h3>
+                                          </div>
+                                          <div class="row">
+                                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                                <p>Toolots accepts all major credit and debit cards.</p>
+                                                <div class="payment-card-bottom">
+                                                    <ul>
+                                                      <li>
+                                                        <img src="assets/images/icon/visa.png" alt="">
+                                                      </li>
+                                                      <li>
+                                                        <img src="assets/images/icon/mastercard.png" alt="">
+                                                      </li>
+                                                      <li>
+                                                        <img src="assets/images/icon/paypal.png" alt="">
+                                                      </li>
+                                                      <li>
+                                                        <img src="assets/images/icon/american-express.png" alt="">
+                                                      </li>
+                                                      <li>
+                                                        <img src="assets/images/icon/discover.png" alt="">
+                                                      </li>
+                                                    </ul>
+                                                  </div>
+                                            </div>
+                                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                                <div class="field-label">Name on Card</div>
+                                                <input (input)="billingComplete = false" (change)="captureEmail(emailInput);" type="text" #emailInput name="email" [formControl]="checkoutForm.controls['email']" value="" placeholder="" autocomplete="off">
+                                                <div *ngIf="checkoutForm.controls.email.touched && checkoutForm.controls.email.errors?.required" class="text text-danger">
+                                                Email is required
+                                                </div>
+                                                <div *ngIf="checkoutForm.controls.email.touched && checkoutForm.controls.email.errors?.email" class="text text-danger">
+                                                Invalid Email
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                                <div class="field-label">Credit Card Number</div>
+                                                <input (input)="billingComplete = false" (change)="captureEmail(emailInput);" type="text" #emailInput name="email" [formControl]="checkoutForm.controls['email']" value="" placeholder="" autocomplete="off">
+                                                <div *ngIf="checkoutForm.controls.email.touched && checkoutForm.controls.email.errors?.required" class="text text-danger">
+                                                Email is required
+                                                </div>
+                                                <div *ngIf="checkoutForm.controls.email.touched && checkoutForm.controls.email.errors?.email" class="text text-danger">
+                                                Invalid Email
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                                <div class="field-label">Expiration Date</div>
+                                                <input (input)="billingComplete = false" (change)="captureEmail(emailInput);" type="text" #emailInput name="email" [formControl]="checkoutForm.controls['email']" value="" placeholder="" autocomplete="off">
+                                                <div *ngIf="checkoutForm.controls.email.touched && checkoutForm.controls.email.errors?.required" class="text text-danger">
+                                                Email is required
+                                                </div>
+                                                <div *ngIf="checkoutForm.controls.email.touched && checkoutForm.controls.email.errors?.email" class="text text-danger">
+                                                Invalid Email
+                                                </div>
+                                            </div>
+
+
+                                          </div>
+                                          <div class="row">
+                                              <div class="col-12 text-right" >
+                                                  <!-- <button [ngStyle]="{ opacity: billingComplete ? '0.4' : '1' }" class="btn btn-solid" (click)="onSaveShipping();" data-toggle="collapse" data-target="#collapseOne">UPDATE SHIPPING</button> -->
+                                                  <button *ngIf="!billingComplete" class="btn btn-solid" (click)="billingComplete = true;" data-toggle="collapse" data-target="#collapseTwo" >UPDATE BILLING</button>
+                                                  <button *ngIf="billingComplete" disabled class="btn btn-solid" (click)="billingComplete = true;" data-toggle="collapse" data-target="#collapseTwo" >UPDATE BILLING</button>
+                                              </div>
+                                          </div>
+                                      <!-- </ng-container> -->
+                                  </div>
+                                </div>
+                              </div>
+
+
+                              <div class="card">
+                                <div class="card-header" id="headingThree">
+                                  <h2 class="mb-0">
+                                    <button [disabled]="!shippingComplete && !billingComplete" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                      Review Order
+                                    </button>
+                                  </h2>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                  <div class="card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                  </div>
+                                </div>
+                              </div>
+
+
+
+
+                            </div>
+
+
+
+
+
+<!--
                             <ng-container *ngIf="billing">
                                 <div class="checkout-title">
                                     <h3>Billing Details</h3>
@@ -209,12 +622,12 @@
                                         </div>
                                     </div>
                                 </div>
-                            </ng-container>
-                            <div class="row ">
+                            </ng-container> -->
+                            <!-- <div class="row ">
                                 <div class="col-12 text-right">
                                     <button class="btn btn-solid" (click)="billing = !billing; shipping = !shipping">{{ billing ? 'NEXT' : 'BACK' }} </button>
                                 </div>
-                            </div>
+                            </div> -->
                           <!-- <div class="row ">
                             <div class="col-12">
                               <div class="stripe-section">
@@ -286,7 +699,7 @@
                                         <li>
                                         	Subtotal <span class="count">{{ getTotal() | async | currency:productsService?.currency:'symbol'}}</span>
                                         </li>
-                                        <li *ngIf='checkOutItems.length'>
+                                        <!-- <li *ngIf='checkOutItems.length'>
                                         	Shipping
                                          <div class="shipping">
                                             <div class="shopping-option">
@@ -298,7 +711,7 @@
                                                 <label for="local-pickup">Local Pickup</label>
                                             </div>
                                          </div>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                     <ul class="total">
                                         <li>Total <span class="count">{{ getTotal() | async | currency:productsService?.currency:'symbol'}}</span></li>

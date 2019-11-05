@@ -1,10 +1,10 @@
 <nav id="main-nav">
-    <div class="toggle-nav">
+    <div class="toggle-nav hide-small">
         <i class="fa fa-bars sidebar-bar"></i>
     </div>
 
     <!-- Sample menu definition -->
-    <ul style="position: inherit !important;" id="main-menu" class="sm pixelstrap sm-horizontal" data-sm-options="{ collapsibleShowFunction: function($ul, complete) {$ul.slideDown(200, complete); }, collapsibleHideFunction: function($ul, complete) { $ul.slideUp(200, function() { $ul.parent().removeClass('open'); complete(); });} }">
+    <ul style="position: inherit !important;" id="main-menu" class="sm pixelstrap sm-horizontal hide-small" data-sm-options="{ collapsibleShowFunction: function($ul, complete) {$ul.slideDown(200, complete); }, collapsibleHideFunction: function($ul, complete) { $ul.slideUp(200, function() { $ul.parent().removeClass('open'); complete(); });} }">
 
         <li>
             <div class="mobile-back text-right">
@@ -121,7 +121,7 @@
                             <h4>Search Industry</h4>
                                 <input type="text" class="form-control" style="width: 100%;">
                             <div class="row">
-                                
+
                                 <div class="col mega-box" style="border: 0" *ngFor="let childrenItem of menuItem.children; index as i">
                                     <div class="link-section">
                                         <div class="menu-title">
@@ -143,7 +143,7 @@
                                                                 <div class="detail">
                                                                     {{childrenSubItem.title}}
                                                                 </div>
-                                                                
+
                                                                 <div style="background-color: #fff; padding: 5px;">
                                                                     <img class="category-side-panel-icon" style="display: initial; margin-right: 14px; width: 50px; height: 50px;" src={{childrenSubItem.image}}>
                                                                 </div>

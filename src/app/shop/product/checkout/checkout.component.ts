@@ -1,11 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { PayPalConfig, PayPalEnvironment, PayPalIntegrationType } from 'ngx-paypal';
 import { CartItem } from '../../../shared/classes/cart-item';
 import { ProductsService } from '../../../shared/services/products.service';
 import { CartService } from '../../../shared/services/cart.service';
 import { OrderService } from '../../../shared/services/order.service';
 import { Observable, of } from 'rxjs';
+//import * as $ from 'jquery';
+declare var $: any;
+
 
 @Component({
   selector: 'app-checkout',
@@ -13,20 +16,30 @@ import { Observable, of } from 'rxjs';
   styleUrls: ['./checkout.component.scss']
 })
 export class CheckoutComponent implements OnInit {
-  
+  @ViewChild('collapseTwo') collapseTwo: ElementRef;
+  @ViewChild('collapseOne') collapseOne: ElementRef;
+
+
   // form group
-  public checkoutForm   :  FormGroup;
-  public checkoutFormShipping   :  FormGroup;
-  public cartItems      :  Observable<CartItem[]> = of([]);
-  public checkOutItems  :  CartItem[] = [];
-  public orderDetails   :  any[] = [];
-  public amount         :  number;
-  public payPalConfig?  :  PayPalConfig;
-  public billing        :  boolean = true;
-  public shipping        :  boolean = false;
+  public checkoutForm: FormGroup;
+  public checkoutFormShipping: FormGroup;
+  public cartItems: Observable<CartItem[]> = of([]);
+  public checkOutItems: CartItem[] = [];
+  public orderDetails: number;
+  public payPalConfig?: PayPalConfig;
+  public billing: Boolean = true;
+  public shipping: Boolean = false;
+  public shippingComplete: Boolean = false;
+  public billingComplete: Boolean = false;
+  public amount: any;
+  public navbarCollapsed = true;
+  public isShipping: boolean = true;
+
+
+
 
   // Form Validator
-  constructor(private fb: FormBuilder, private cartService: CartService, 
+  constructor(private fb: FormBuilder, private cartService: CartService,
     public productsService: ProductsService, private orderService: OrderService) {
     this.checkoutForm = this.fb.group({
       firstname: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
@@ -37,7 +50,8 @@ export class CheckoutComponent implements OnInit {
       country: ['', Validators.required],
       town: ['', Validators.required],
       state: ['', Validators.required],
-      postalcode: ['', Validators.required]
+      postalcode: ['', Validators.required],
+      shipping: ['', Validators.required],
     });
     this.checkoutFormShipping = this.fb.group({
       firstname: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
@@ -48,11 +62,17 @@ export class CheckoutComponent implements OnInit {
       country: ['', Validators.required],
       town: ['', Validators.required],
       state: ['', Validators.required],
-      postalcode: ['', Validators.required]
+      postalcode: ['', Validators.required],
+      shipping: ['', Validators.required],
     });
   }
-
   ngOnInit() {
+    //console.log(this.checkoutFormShipping.shipping)
+    //
+    //this.isShipping = true;
+    // $(function () {
+    //   $('[data-toggle="tooltip"]').tooltip()
+    // })
     this.cartItems = this.cartService.getItems();
     this.cartItems.subscribe(products => this.checkOutItems = products);
     this.getTotal().subscribe(amount => this.amount = amount);
@@ -69,30 +89,47 @@ export class CheckoutComponent implements OnInit {
     (<HTMLElement>document.getElementById('header-type')).style.display = 'initial';
     (<HTMLElement>document.querySelector('.footer-light')).style.display = 'initial';
   }
-  
-  copyCheckoutForm() {
-    this.checkoutFormShipping = this.checkoutForm;
-    console.log('balz')
+
+  onSaveShipping() {
+    console.log(this.checkoutFormShipping)
+    //(<any>$('#collapseOne')).collapse();
+    this.shippingComplete = true;
+
+    var collapseTwo = $(this.collapseTwo.nativeElement);
+    // const collapseOne = $(this.collapseOne.nativeElement);
+    //collapseTwo.collapse('show');
+    setTimeout(()=> {
+      collapseTwo.collapse('show');
+    }, 600)
+    // collapseOne.collapse();
+    // $('#collapseOne').collapse({
+    //   toggle: false
+    // });
+  }
+
+
+  copyCheckoutForm(e) {
+    this.checkoutForm = this.checkoutFormShipping;
   }
 
   // Get sub Total
   public getTotal(): Observable<number> {
     return this.cartService.getTotalAmount();
   }
-  
+
   captureEmail(inputText: any) {
     const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (inputText.value.match(mailformat)) {
-        console.log('SUCCESS! EMAIL SAVED: ' + inputText.value);
-        alert('SUCCESS! EMAIL SAVED: ' + inputText.value);
+        //alert('SUCCESS! EMAIL SAVED: ' + inputText.value);
     }
     else {
         console.log('INVALID EMAIL, IGNORING: ' + inputText.value);
-        alert('INVALID EMAIL, IGNORING: ' + inputText.value);
+        //alert('INVALID EMAIL, IGNORING: ' + inputText.value);
         return false;
     }
 }
- 
+
+
   // stripe payment gateway
   // stripeCheckout() {
   //     var handler = (<any>window).StripeCheckout.configure({
@@ -108,7 +145,7 @@ export class CheckoutComponent implements OnInit {
   //       name: 'Multikart',
   //       description: 'Online Fashion Store',
   //       amount: this.amount * 100
-  //     }) 
+  //     })
   // }
 
   // Paypal payment gateway
@@ -123,7 +160,7 @@ export class CheckoutComponent implements OnInit {
           size:  'small',    // small | medium | large | responsive
           shape: 'rect',     // pill | rect
           //color: 'blue',   // gold | blue | silver | black
-          //tagline: false  
+          //tagline: false
         },
         onPaymentComplete: (data, actions) => {
           this.orderService.createOrder(this.checkOutItems, this.checkoutForm.value, data.orderID, this.amount);
@@ -143,5 +180,5 @@ export class CheckoutComponent implements OnInit {
       });
   }
 
-  
+
 }

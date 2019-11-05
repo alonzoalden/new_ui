@@ -80,8 +80,9 @@ import { NewsletterComponent } from './product/widgets/newsletter/newsletter.com
 
 import { ToolotsSliderComponent } from './toolots/slider/slider.component'
 import { AboutToolotsComponent } from './toolots/about/about.component'
-
-
+import { TooltipModule } from 'ng2-tooltip-directive';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CollapseModule, BsDropdownModule } from 'ngx-bootstrap';
 @NgModule({
   exports: [ExitPopupComponent],
   imports: [
@@ -97,7 +98,10 @@ import { AboutToolotsComponent } from './toolots/about/about.component'
     NgxPayPalModule,
     NgxImgZoomModule,
     NgxImageZoomModule.forRoot(),
-    LightboxModule
+    LightboxModule,
+    TooltipModule,
+    NgbModule,
+    CollapseModule.forRoot()
   ],
   declarations: [
     ToolotsCollectionSliderThirteenComponent,
