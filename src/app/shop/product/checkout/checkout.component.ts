@@ -16,6 +16,7 @@ declare var $: any;
   styleUrls: ['./checkout.component.scss']
 })
 export class CheckoutComponent implements OnInit {
+  @ViewChild('collapseThree') collapseThree: ElementRef;
   @ViewChild('collapseTwo') collapseTwo: ElementRef;
   @ViewChild('collapseOne') collapseOne: ElementRef;
 
@@ -34,7 +35,7 @@ export class CheckoutComponent implements OnInit {
   public amount: any;
   public navbarCollapsed = true;
   public isShipping: boolean = true;
-
+  public shoppingCartItems  :   CartItem[] = [];
 
 
 
@@ -74,8 +75,9 @@ export class CheckoutComponent implements OnInit {
     //   $('[data-toggle="tooltip"]').tooltip()
     // })
     this.cartItems = this.cartService.getItems();
-    this.cartItems.subscribe(products => this.checkOutItems = products);
+    this.cartItems.subscribe(products => this.shoppingCartItems = products);
     this.getTotal().subscribe(amount => this.amount = amount);
+
     //this.initConfig();
   }
 
@@ -91,20 +93,19 @@ export class CheckoutComponent implements OnInit {
   }
 
   onSaveShipping() {
-    console.log(this.checkoutFormShipping)
-    //(<any>$('#collapseOne')).collapse();
     this.shippingComplete = true;
-
-    var collapseTwo = $(this.collapseTwo.nativeElement);
-    // const collapseOne = $(this.collapseOne.nativeElement);
-    //collapseTwo.collapse('show');
+    const collapseTwo = $(this.collapseTwo.nativeElement);
     setTimeout(()=> {
       collapseTwo.collapse('show');
     }, 600)
-    // collapseOne.collapse();
-    // $('#collapseOne').collapse({
-    //   toggle: false
-    // });
+  }
+
+  onSaveBilling() {
+    this.billingComplete = true;
+    const collapseThree = $(this.collapseThree.nativeElement);
+    setTimeout(()=> {
+      collapseThree.collapse('show');
+    }, 600)
   }
 
 
