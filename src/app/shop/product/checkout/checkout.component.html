@@ -257,84 +257,84 @@
                                               </div>
                                               <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                                   <div class="field-label">Email Address</div>
-                                                  <input (input)="billingComplete = false" (change)="captureEmail(emailInput);" type="text" #emailInput name="email" [formControl]="checkoutForm.controls['email']" value="" placeholder="" autocomplete="off">
-                                                  <div *ngIf="checkoutForm.controls.email.touched && checkoutForm.controls.email.errors?.required" class="text text-danger">
+                                                  <input (input)="billingComplete = false" (change)="captureEmail(emailInput);" type="text" #emailInput name="email" [formControl]="checkoutFormBilling.controls['email']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutFormBilling.controls.email.touched && checkoutFormBilling.controls.email.errors?.required" class="text text-danger">
                                                   Email is required
                                                   </div>
-                                                  <div *ngIf="checkoutForm.controls.email.touched && checkoutForm.controls.email.errors?.email" class="text text-danger">
+                                                  <div *ngIf="checkoutFormBilling.controls.email.touched && checkoutFormBilling.controls.email.errors?.email" class="text text-danger">
                                                   Invalid Email
                                                   </div>
                                               </div>
                                               <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                                   <div class="field-label">Phone</div>
-                                                  <input type="text" name="phone" [formControl]="checkoutForm.controls['phone']" value="" placeholder="" autocomplete="off">
-                                                  <div *ngIf="checkoutForm.controls.phone.touched && checkoutForm.controls.phone.errors?.required" class="text text-danger">
+                                                  <input type="text" name="phone" [formControl]="checkoutFormBilling.controls['phone']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutFormBilling.controls.phone.touched && checkoutFormBilling.controls.phone.errors?.required" class="text text-danger">
                                                   Phone No is required.
                                                   </div>
-                                                  <div *ngIf="checkoutForm.controls.phone.touched && checkoutForm.controls.phone.errors?.pattern" class="text text-danger">
+                                                  <div *ngIf="checkoutFormBilling.controls.phone.touched && checkoutFormBilling.controls.phone.errors?.pattern" class="text text-danger">
                                                   Phone No is must be number.
                                                   </div>
                                               </div>
                                               <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                                   <div class="field-label">First Name</div>
-                                                  <input type="text" name="firstname" [formControl]="checkoutForm.controls['firstname']" value="" placeholder="" autocomplete="off">
-                                                  <div *ngIf="checkoutForm.controls.firstname.touched && checkoutForm.controls.firstname.errors?.required" class="text text-danger">
+                                                  <input type="text" name="firstname" [formControl]="checkoutFormBilling.controls['firstname']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutFormBilling.controls.firstname.touched && checkoutFormBilling.controls.firstname.errors?.required" class="text text-danger">
                                                   First Name is required.
                                                   </div>
-                                                  <div *ngIf="checkoutForm.controls.firstname.touched && checkoutForm.controls.firstname.errors?.pattern" class="text text-danger">
+                                                  <div *ngIf="checkoutFormBilling.controls.firstname.touched && checkoutFormBilling.controls.firstname.errors?.pattern" class="text text-danger">
                                                   First Name must be an alphabates.
                                                   </div>
                                               </div>
                                               <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                                   <div class="field-label">Last Name </div>
-                                                  <input type="text" name="lastname" [formControl]="checkoutForm.controls['lastname']" value="" placeholder="" autocomplete="off">
-                                                  <div *ngIf="checkoutForm.controls.lastname.touched && checkoutForm.controls.lastname.errors?.required" class="text text-danger">
+                                                  <input type="text" name="lastname" [formControl]="checkoutFormBilling.controls['lastname']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutFormBilling.controls.lastname.touched && checkoutFormBilling.controls.lastname.errors?.required" class="text text-danger">
                                                   Last Name is required.
                                                   </div>
-                                                  <div *ngIf="checkoutForm.controls.lastname.touched && checkoutForm.controls.lastname.errors?.pattern" class="text text-danger">
+                                                  <div *ngIf="checkoutFormBilling.controls.lastname.touched && checkoutFormBilling.controls.lastname.errors?.pattern" class="text text-danger">
                                                   Last Name must be an alphabates.
                                                   </div>
                                               </div>
                                               <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                                   <div class="field-label">Country</div>
-                                                  <select name="country" [formControl]="checkoutForm.controls['country']">
+                                                  <select name="country" [formControl]="checkoutFormBilling.controls['country']">
                                                       <option value="" selected>Select Country</option>
                                                       <option value="India">India</option>
                                                       <option value="USA">USA</option>
                                                       <option value="Australia">Australia</option>
                                                   </select>
-                                                  <div *ngIf="checkoutForm.controls.country.touched && checkoutForm.controls.country.errors?.required" class="text text-danger">
+                                                  <div *ngIf="checkoutFormBilling.controls.country.touched && checkoutFormBilling.controls.country.errors?.required" class="text text-danger">
                                                   Country is required
                                                   </div>
                                               </div>
                                               <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                                   <div class="field-label">Address</div>
-                                                  <input type="text" name="address" [formControl]="checkoutForm.controls['address']" value="" placeholder="" autocomplete="off">
-                                                  <div *ngIf="checkoutForm.controls.address.touched && checkoutForm.controls.address.errors?.required" class="text text-danger">
+                                                  <input type="text" name="address" [formControl]="checkoutFormBilling.controls['address']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutFormBilling.controls.address.touched && checkoutFormBilling.controls.address.errors?.required" class="text text-danger">
                                                   Address is required
                                                   </div>
-                                                  <div *ngIf="checkoutForm.controls.address.touched && checkoutForm.controls.address.errors?.maxlength" class="text text-danger">
+                                                  <div *ngIf="checkoutFormBilling.controls.address.touched && checkoutFormBilling.controls.address.errors?.maxlength" class="text text-danger">
                                                   Maximum 50 character
                                                   </div>
                                               </div>
                                               <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                                   <div class="field-label">Town/City</div>
-                                                  <input type="text" name="town" [formControl]="checkoutForm.controls['town']" value="" placeholder="" autocomplete="off">
-                                                  <div *ngIf="checkoutForm.controls.town.touched && checkoutForm.controls.town.errors?.required" class="text text-danger">
+                                                  <input type="text" name="town" [formControl]="checkoutFormBilling.controls['town']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutFormBilling.controls.town.touched && checkoutFormBilling.controls.town.errors?.required" class="text text-danger">
                                                   City is required
                                                   </div>
                                               </div>
                                               <div class="form-group col-md-12 col-sm-6 col-xs-12">
                                                   <div class="field-label">State</div>
-                                                  <input type="text" name="state" [formControl]="checkoutForm.controls['state']" value="" placeholder="" autocomplete="off">
-                                                  <div *ngIf="checkoutForm.controls.state.touched && checkoutForm.controls.state.errors?.required" class="text text-danger">
+                                                  <input type="text" name="state" [formControl]="checkoutFormBilling.controls['state']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutFormBilling.controls.state.touched && checkoutFormBilling.controls.state.errors?.required" class="text text-danger">
                                                   State is required
                                                   </div>
                                               </div>
                                               <div class="form-group col-md-12 col-sm-6 col-xs-12">
                                                   <div class="field-label">Postal Code</div>
-                                                  <input type="text" name="postalcode" [formControl]="checkoutForm.controls['postalcode']" value="" placeholder="" autocomplete="off">
-                                                  <div *ngIf="checkoutForm.controls.postalcode.touched && checkoutForm.controls.postalcode.errors?.required" class="text text-danger">
+                                                  <input type="text" name="postalcode" [formControl]="checkoutFormBilling.controls['postalcode']" value="" placeholder="" autocomplete="off">
+                                                  <div *ngIf="checkoutFormBilling.controls.postalcode.touched && checkoutFormBilling.controls.postalcode.errors?.required" class="text text-danger">
                                                   Postalcode is required
                                                   </div>
                                               </div>
@@ -368,33 +368,33 @@
                                             </div>
                                             <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                                 <div class="field-label">Name on Card</div>
-                                                <input (input)="billingComplete = false" (change)="captureEmail(emailInput);" type="text" #emailInput name="email" [formControl]="checkoutForm.controls['email']" value="" placeholder="" autocomplete="off">
-                                                <div *ngIf="checkoutForm.controls.email.touched && checkoutForm.controls.email.errors?.required" class="text text-danger">
+                                                <input (input)="billingComplete = false" (change)="captureEmail(emailInput);" type="text" #emailInput name="email" [formControl]="checkoutFormBilling.controls['email']" value="" placeholder="" autocomplete="off">
+                                                <div *ngIf="checkoutFormBilling.controls.email.touched && checkoutFormBilling.controls.email.errors?.required" class="text text-danger">
                                                 Email is required
                                                 </div>
-                                                <div *ngIf="checkoutForm.controls.email.touched && checkoutForm.controls.email.errors?.email" class="text text-danger">
+                                                <div *ngIf="checkoutFormBilling.controls.email.touched && checkoutFormBilling.controls.email.errors?.email" class="text text-danger">
                                                 Invalid Email
                                                 </div>
                                             </div>
 
                                             <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                                 <div class="field-label">Credit Card Number</div>
-                                                <input (input)="billingComplete = false" (change)="captureEmail(emailInput);" type="text" #emailInput name="email" [formControl]="checkoutForm.controls['email']" value="" placeholder="" autocomplete="off">
-                                                <div *ngIf="checkoutForm.controls.email.touched && checkoutForm.controls.email.errors?.required" class="text text-danger">
+                                                <input (input)="billingComplete = false" (change)="captureEmail(emailInput);" type="text" #emailInput name="email" [formControl]="checkoutFormBilling.controls['email']" value="" placeholder="" autocomplete="off">
+                                                <div *ngIf="checkoutFormBilling.controls.email.touched && checkoutFormBilling.controls.email.errors?.required" class="text text-danger">
                                                 Email is required
                                                 </div>
-                                                <div *ngIf="checkoutForm.controls.email.touched && checkoutForm.controls.email.errors?.email" class="text text-danger">
+                                                <div *ngIf="checkoutFormBilling.controls.email.touched && checkoutFormBilling.controls.email.errors?.email" class="text text-danger">
                                                 Invalid Email
                                                 </div>
                                             </div>
 
                                             <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                                 <div class="field-label">Expiration Date</div>
-                                                <input (input)="billingComplete = false" (change)="captureEmail(emailInput);" type="text" #emailInput name="email" [formControl]="checkoutForm.controls['email']" value="" placeholder="" autocomplete="off">
-                                                <div *ngIf="checkoutForm.controls.email.touched && checkoutForm.controls.email.errors?.required" class="text text-danger">
+                                                <input (input)="billingComplete = false" (change)="captureEmail(emailInput);" type="text" #emailInput name="email" [formControl]="checkoutFormBilling.controls['email']" value="" placeholder="" autocomplete="off">
+                                                <div *ngIf="checkoutFormBilling.controls.email.touched && checkoutFormBilling.controls.email.errors?.required" class="text text-danger">
                                                 Email is required
                                                 </div>
-                                                <div *ngIf="checkoutForm.controls.email.touched && checkoutForm.controls.email.errors?.email" class="text text-danger">
+                                                <div *ngIf="checkoutFormBilling.controls.email.touched && checkoutFormBilling.controls.email.errors?.email" class="text text-danger">
                                                 Invalid Email
                                                 </div>
                                             </div>
@@ -529,84 +529,84 @@
                                 <div class="row check-out">
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                         <div class="field-label">Email Address</div>
-                                        <input (change)="captureEmail(emailInput)" type="text" #emailInput name="email" [formControl]="checkoutForm.controls['email']" value="" placeholder="" autocomplete="off">
-                                        <div *ngIf="checkoutForm.controls.email.touched && checkoutForm.controls.email.errors?.required" class="text text-danger">
+                                        <input (change)="captureEmail(emailInput)" type="text" #emailInput name="email" [formControl]="checkoutFormBilling.controls['email']" value="" placeholder="" autocomplete="off">
+                                        <div *ngIf="checkoutFormBilling.controls.email.touched && checkoutFormBilling.controls.email.errors?.required" class="text text-danger">
                                         Email is required
                                         </div>
-                                        <div *ngIf="checkoutForm.controls.email.touched && checkoutForm.controls.email.errors?.email" class="text text-danger">
+                                        <div *ngIf="checkoutFormBilling.controls.email.touched && checkoutFormBilling.controls.email.errors?.email" class="text text-danger">
                                         Invalid Email
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                         <div class="field-label">Phone</div>
-                                        <input type="text" name="phone" [formControl]="checkoutForm.controls['phone']" value="" placeholder="" autocomplete="off">
-                                        <div *ngIf="checkoutForm.controls.phone.touched && checkoutForm.controls.phone.errors?.required" class="text text-danger">
+                                        <input type="text" name="phone" [formControl]="checkoutFormBilling.controls['phone']" value="" placeholder="" autocomplete="off">
+                                        <div *ngIf="checkoutFormBilling.controls.phone.touched && checkoutFormBilling.controls.phone.errors?.required" class="text text-danger">
                                         Phone No is required.
                                         </div>
-                                        <div *ngIf="checkoutForm.controls.phone.touched && checkoutForm.controls.phone.errors?.pattern" class="text text-danger">
+                                        <div *ngIf="checkoutFormBilling.controls.phone.touched && checkoutFormBilling.controls.phone.errors?.pattern" class="text text-danger">
                                         Phone No is must be number.
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                         <div class="field-label">First Name</div>
-                                        <input type="text" name="firstname" [formControl]="checkoutForm.controls['firstname']" value="" placeholder="" autocomplete="off">
-                                        <div *ngIf="checkoutForm.controls.firstname.touched && checkoutForm.controls.firstname.errors?.required" class="text text-danger">
+                                        <input type="text" name="firstname" [formControl]="checkoutFormBilling.controls['firstname']" value="" placeholder="" autocomplete="off">
+                                        <div *ngIf="checkoutFormBilling.controls.firstname.touched && checkoutFormBilling.controls.firstname.errors?.required" class="text text-danger">
                                         First Name is required.
                                         </div>
-                                        <div *ngIf="checkoutForm.controls.firstname.touched && checkoutForm.controls.firstname.errors?.pattern" class="text text-danger">
+                                        <div *ngIf="checkoutFormBilling.controls.firstname.touched && checkoutFormBilling.controls.firstname.errors?.pattern" class="text text-danger">
                                         First Name must be an alphabates.
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                         <div class="field-label">Last Name </div>
-                                        <input type="text" name="lastname" [formControl]="checkoutForm.controls['lastname']" value="" placeholder="" autocomplete="off">
-                                        <div *ngIf="checkoutForm.controls.lastname.touched && checkoutForm.controls.lastname.errors?.required" class="text text-danger">
+                                        <input type="text" name="lastname" [formControl]="checkoutFormBilling.controls['lastname']" value="" placeholder="" autocomplete="off">
+                                        <div *ngIf="checkoutFormBilling.controls.lastname.touched && checkoutFormBilling.controls.lastname.errors?.required" class="text text-danger">
                                         Last Name is required.
                                         </div>
-                                        <div *ngIf="checkoutForm.controls.lastname.touched && checkoutForm.controls.lastname.errors?.pattern" class="text text-danger">
+                                        <div *ngIf="checkoutFormBilling.controls.lastname.touched && checkoutFormBilling.controls.lastname.errors?.pattern" class="text text-danger">
                                         Last Name must be an alphabates.
                                         </div>
                                     </div>
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                         <div class="field-label">Country</div>
-                                        <select name="country" [formControl]="checkoutForm.controls['country']">
+                                        <select name="country" [formControl]="checkoutFormBilling.controls['country']">
                                             <option value="" selected>Select Country</option>
                                             <option value="India">India</option>
                                             <option value="USA">USA</option>
                                             <option value="Australia">Australia</option>
                                         </select>
-                                        <div *ngIf="checkoutForm.controls.country.touched && checkoutForm.controls.country.errors?.required" class="text text-danger">
+                                        <div *ngIf="checkoutFormBilling.controls.country.touched && checkoutFormBilling.controls.country.errors?.required" class="text text-danger">
                                         Country is required
                                         </div>
                                     </div>
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                         <div class="field-label">Address</div>
-                                        <input type="text" name="address" [formControl]="checkoutForm.controls['address']" value="" placeholder="" autocomplete="off">
-                                        <div *ngIf="checkoutForm.controls.address.touched && checkoutForm.controls.address.errors?.required" class="text text-danger">
+                                        <input type="text" name="address" [formControl]="checkoutFormBilling.controls['address']" value="" placeholder="" autocomplete="off">
+                                        <div *ngIf="checkoutFormBilling.controls.address.touched && checkoutFormBilling.controls.address.errors?.required" class="text text-danger">
                                         Address is required
                                         </div>
-                                        <div *ngIf="checkoutForm.controls.address.touched && checkoutForm.controls.address.errors?.maxlength" class="text text-danger">
+                                        <div *ngIf="checkoutFormBilling.controls.address.touched && checkoutFormBilling.controls.address.errors?.maxlength" class="text text-danger">
                                         Maximum 50 character
                                         </div>
                                     </div>
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                         <div class="field-label">Town/City</div>
-                                        <input type="text" name="town" [formControl]="checkoutForm.controls['town']" value="" placeholder="" autocomplete="off">
-                                        <div *ngIf="checkoutForm.controls.town.touched && checkoutForm.controls.town.errors?.required" class="text text-danger">
+                                        <input type="text" name="town" [formControl]="checkoutFormBilling.controls['town']" value="" placeholder="" autocomplete="off">
+                                        <div *ngIf="checkoutFormBilling.controls.town.touched && checkoutFormBilling.controls.town.errors?.required" class="text text-danger">
                                         City is required
                                         </div>
                                     </div>
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
                                         <div class="field-label">State</div>
-                                        <input type="text" name="state" [formControl]="checkoutForm.controls['state']" value="" placeholder="" autocomplete="off">
-                                        <div *ngIf="checkoutForm.controls.state.touched && checkoutForm.controls.state.errors?.required" class="text text-danger">
+                                        <input type="text" name="state" [formControl]="checkoutFormBilling.controls['state']" value="" placeholder="" autocomplete="off">
+                                        <div *ngIf="checkoutFormBilling.controls.state.touched && checkoutFormBilling.controls.state.errors?.required" class="text text-danger">
                                         State is required
                                         </div>
                                     </div>
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
                                         <div class="field-label">Postal Code</div>
-                                        <input type="text" name="postalcode" [formControl]="checkoutForm.controls['postalcode']" value="" placeholder="" autocomplete="off">
-                                        <div *ngIf="checkoutForm.controls.postalcode.touched && checkoutForm.controls.postalcode.errors?.required" class="text text-danger">
+                                        <input type="text" name="postalcode" [formControl]="checkoutFormBilling.controls['postalcode']" value="" placeholder="" autocomplete="off">
+                                        <div *ngIf="checkoutFormBilling.controls.postalcode.touched && checkoutFormBilling.controls.postalcode.errors?.required" class="text text-danger">
                                         Postalcode is required
                                         </div>
                                     </div>
@@ -822,11 +822,11 @@
                                         </div>
                                     </div>
                                     <div class="text-right">
-                                        <button class="btn-solid btn" [disabled]="!checkoutForm.valid" (click)="stripeCheckout()" type="submit"
+                                        <button class="btn-solid btn" [disabled]="!checkoutFormBilling.valid" (click)="stripeCheckout()" type="submit"
                                         *ngIf="!payment">
                                            Place Order
                                         </button>
-                                        <ngx-paypal [config]="payPalConfig" [ngClass]="{'btn disabled': !checkoutForm.valid}" *ngIf="payment">
+                                        <ngx-paypal [config]="payPalConfig" [ngClass]="{'btn disabled': !checkoutFormBilling.valid}" *ngIf="payment">
                                         </ngx-paypal>
                                     </div>
                                 </div>

@@ -22,7 +22,7 @@ export class CheckoutComponent implements OnInit {
 
 
   // form group
-  public checkoutForm: FormGroup;
+  public checkoutFormBilling: FormGroup;
   public checkoutFormShipping: FormGroup;
   public cartItems: Observable<CartItem[]> = of([]);
   public checkOutItems: CartItem[] = [];
@@ -42,7 +42,7 @@ export class CheckoutComponent implements OnInit {
   // Form Validator
   constructor(private fb: FormBuilder, private cartService: CartService,
     public productsService: ProductsService, private orderService: OrderService) {
-    this.checkoutForm = this.fb.group({
+    this.checkoutFormBilling = this.fb.group({
       firstname: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
       lastname: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
       phone: ['', [Validators.required, Validators.pattern('[0-9]+')]],
@@ -110,7 +110,7 @@ export class CheckoutComponent implements OnInit {
 
 
   copyCheckoutForm(e) {
-    this.checkoutForm = this.checkoutFormShipping;
+    this.checkoutFormBilling = this.checkoutFormShipping;
   }
 
   // Get sub Total
@@ -139,7 +139,7 @@ export class CheckoutComponent implements OnInit {
   //       token: (token: any) => {
   //         // You can access the token ID with `token.id`.
   //         // Get the token ID to your server-side code for use.
-  //         this.orderService.createOrder(this.checkOutItems, this.checkoutForm.value, token.id, this.amount);
+  //         this.orderService.createOrder(this.checkOutItems, this.checkoutFormBilling.value, token.id, this.amount);
   //       }
   //     });
   //     handler.open({
@@ -164,7 +164,7 @@ export class CheckoutComponent implements OnInit {
           //tagline: false
         },
         onPaymentComplete: (data, actions) => {
-          this.orderService.createOrder(this.checkOutItems, this.checkoutForm.value, data.orderID, this.amount);
+          this.orderService.createOrder(this.checkOutItems, this.checkoutFormBilling.value, data.orderID, this.amount);
         },
         onCancel: (data, actions) => {
           console.log('OnCancel');

@@ -63,7 +63,7 @@
     "ngx-slick-carousel": "^0.4.1",
     "ngx-sticky": "^2.0.1",
     "ngx-toastr": "^9.1.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.0",
     "path": "^0.12.7",
     "popper.js": "^1.15.0",
     "rxjs": "^6.3.3",
