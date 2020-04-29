@@ -82,14 +82,14 @@ export class CheckoutComponent implements OnInit {
   }
 
   ngAfterViewInit(){
-    (<HTMLElement>document.getElementById('header-type')).style.display = 'none';
-    (<HTMLElement>document.querySelector('.footer-light')).style.display = 'none';
+    // (<HTMLElement>document.getElementById('header-type')).style.display = 'none';
+    //(<HTMLElement>document.querySelector('.footer-light')).style.display = 'none';
 
   }
 
   ngOnDestroy() {
-    (<HTMLElement>document.getElementById('header-type')).style.display = 'initial';
-    (<HTMLElement>document.querySelector('.footer-light')).style.display = 'initial';
+    // (<HTMLElement>document.getElementById('header-type')).style.display = 'initial';
+    // (<HTMLElement>document.querySelector('.footer-light')).style.display = 'initial';
   }
 
   onSaveShipping() {

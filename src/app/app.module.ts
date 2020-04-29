@@ -14,7 +14,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 // components
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 import * as $ from 'jquery';
 
 // AoT requires an exported function for factories
@@ -48,8 +48,10 @@ export function HttpLoaderFactory(http: HttpClient) {
       enableHtml: true,
     }),
     // RouterModule.forRoot(rootRouterConfig, { useHash: false, anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled' })
-    RouterModule.forRoot(rootRouterConfig, { useHash: false, anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled' })
+    RouterModule.forRoot(rootRouterConfig, { useHash: false, anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled' }),
+    FlexLayoutModule
   ],
+  exports: [FlexLayoutModule],
   providers: [],
   bootstrap: [AppComponent]
 })

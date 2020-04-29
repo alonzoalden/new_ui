@@ -30,12 +30,14 @@ import { CategoriesComponent } from './footer/widgets/categories/categories.comp
 import { WhyWeChooseComponent } from './footer/widgets/why-we-choose/why-we-choose.component';
 import { CopyrightComponent } from './footer/widgets/copyright/copyright.component';
 import { SocialComponent } from './footer/widgets/social/social.component';
+import { HeaderTwoComponent } from './header/header-two/header-two.component';
 
 @NgModule({
   exports: [
     CommonModule,
     TranslateModule,
     HeaderOneComponent,
+    HeaderTwoComponent,
     FooterOneComponent,
     FooterTwoComponent,
     FooterThreeComponent,
@@ -49,6 +51,7 @@ import { SocialComponent } from './footer/widgets/social/social.component';
   ],
   declarations: [
     HeaderOneComponent,
+    HeaderTwoComponent,
     FooterOneComponent,
     FooterTwoComponent,
     FooterThreeComponent,
