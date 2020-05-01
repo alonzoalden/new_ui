@@ -1,0 +1,37 @@
+<mat-grid-list cols="2" rowHeight="1:1.1">
+    <mat-grid-tile *ngFor="let tile of products; let i = index" [routerLink]="'/home/toolots/product/' + tile.id">
+        <div fxLayout="column" style="height: 100%; width: 100%; padding: 8px;">
+            <div style="width: 100%; height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;"
+                [ngStyle]="{'background-image':'url(' + tile.pictures[0] + ')'}"
+                fxLayoutAlign="space-between">
+                <div style="height: 100%;" fxLayout="column" fxLayoutAlign="flex-end flex-end">
+                    <div *ngIf="i % 3 === 0"
+                        style="width: fit-content; font-size: 10px; background-color: red; color: #fff; padding: 6px; border-radius: 2px;"
+                        fxLayout="column" fxLayoutAlign="center">
+                        <!-- <span class="material-icons" fxLayoutAlign="center center">notification_important</span> -->
+                        <div fxLayoutAlign="center" style="text-align: center; font-weight: 600;">
+                            ALMOST GONE
+                        </div>
+                    </div>
+                </div>
+                <div style="height: 100%;" fxLayout="column" fxLayoutAlign="space-between flex-end">
+                    <div *ngIf="tile.price < 200"
+                        style="width: fit-content; background-color: #ffa928; color: #fff; padding: 4px; border-radius: 2px;"
+                        fxLayout="column" fxLayoutAlign="center">
+                        <!-- <span class="material-icons" fxLayoutAlign="center center">attach_money</span> -->
+                        <div fxLayoutAlign="center">SAVE -49%</div>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100%; min-height: 45px !important; height: 40px;overflow: hidden; padding: 0px 6px;" >
+                <div style="font-weight: 600;">
+                    $ {{tile.price}}
+                </div>
+                <div style="font-weight: 200;">
+                    {{tile.name}}
+                </div>
+            </div>
+        </div>
+
+    </mat-grid-tile>
+</mat-grid-list>

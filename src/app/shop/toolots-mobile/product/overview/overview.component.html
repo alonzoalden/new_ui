@@ -1,0 +1,112 @@
+<div style="padding-bottom: 100px; padding-top: 48px;" *ngIf="product">
+    <div class="container " style="padding: 0; position: relative;">
+        <ngx-slick-carousel style="display: flex; align-items: center; width: 100%;" class="product-5 product-m"
+            #slickModal="slick-carousel" [config]="productSlideConfig">
+            <div ngxSlickItem style="width: 100vh; height: 100%;"
+                *ngFor="let image of product.pictures; let i = index;">
+                <div style="padding: 8px 18px; height: 400px; background-position: center; background-repeat: no-repeat; background-size: contain;"
+                    [ngStyle]="{'background-image':'url(' + product.pictures[0] + ')'}">
+                    <div fxLayoutAlign="flex-end">
+                        <div style="background-color: #111111; color: #fff; border-radius: 2px; padding: 2px 4px;">
+                            {{ i + 1 }} / {{ product.pictures.length }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ngx-slick-carousel>
+    </div>
+    <div class="container" style="letter-spacing: 0.3px; font-size: 16px; position: relative;">
+        <button style="position: absolute; right: 10px; top: -21px;" mat-icon-button>
+            <div class="material-icons">share</div>
+        </button>
+        <div style="font-family: Lato; font-weight: 300; padding-right: 50px; padding-top: 20px;">{{product?.name}}</div>
+        <div class="rating three-star " style="margin-bottom:0px;">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <span style="padding-right: 10px;padding-left: 6px;"><a (click)="scrollToEl(reviewsTab, 0)" [routerLink]=""
+                    style="font-weight: 200;">14 store reviews</a></span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="section-product" fxLayout="column">
+            <div class="title">Store Information</div>
+            <div fxLayout="row">
+                <div flex="1">
+                    <span class="material-icons" style="font-size: 42px; color: rgba(0, 0, 0, 0.3);">face</span>
+                </div>
+                <div flex="4" fxLayout="column" style="padding-left: 10px;">
+                    <div>RefrigKings</div>
+                    <div class="rating five-star mini" style="margin-bottom:0px;">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <span style="padding-right: 10px;padding-left: 6px;"><a (click)="scrollToEl(reviewsTab, 0)" [routerLink]=""
+                                style="font-weight: 200;">14 reviews</a></span>
+                    </div>
+                </div>
+                
+            </div>
+
+            
+        </div>
+        
+    </div>
+
+    <mat-accordion style="box-shadow: 0;">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Description
+                </mat-panel-title>
+                <!-- <mat-panel-description>
+                  Type your name and age
+                </mat-panel-description> -->
+            </mat-expansion-panel-header>
+
+            {{product.description}}
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Reference Price By Seller
+                </mat-panel-title>
+
+            </mat-expansion-panel-header>
+            <p>A reference price is provided by the seller of the item (RefrigKings). Percentage off and savings amounts are
+                based on the seller's reference price. Sellers are not required to provide a reference price, but if
+                they do, it should be (a) the Manufacturer's Suggested Retail Price (MSRP) or similar List Price of the
+                product; or (b) the price at which the item has been recently offered for sale and for a reasonable
+                period of time.</p>
+
+            <p>If you feel a reference price is inaccurate or misleading please report it with the URL for the listing
+                to support@toolots.com.</p>
+
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Guaranteed Shipping
+                </mat-panel-title>
+
+            </mat-expansion-panel-header>
+            <div><strong>Standard Shipping: </strong></div>
+            <div>$1USD</div>
+            <div>Ships from warehouse May 1 - May 7</div>
+            <div style="margin-top: 10px;">Items are sold and shipped by toolots</div>
+
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+<div fxLayoutAlign="space-between" style="z-index: 99 !important; position: fixed; bottom: 0; width: 100%; background-color: #111111; color: #fff; padding: 10px 15px 10px 15px;">
+    <div>
+        <div style="color: #ffa928; font-size: 20px; font-weight: 700;">${{product?.price}}</div>
+        <div style="color: #ffa928; font-weight: 400; letter-spacing: 2px;">LOW SUPPLY</div>
+        <div style="color: rgba(255, 255, 255, 0.5); font-weight: 200; letter-spacing: 0.2px;">PLUS TAX AND S&H </div>
+    </div>
+    <div fxLayoutAlign="center center"><button title="Add to Cart" class="add-to-cart btn btn-solid">Add to Cart</button></div>
+  </div>
