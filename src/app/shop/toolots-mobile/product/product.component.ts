@@ -26,7 +26,6 @@ export class ProductMobileComponent implements OnInit {
                 products => {
                     this.products = products;
                     this.route.params.subscribe(params => {
-                        this.selected.setValue(0);
                         this.isLoading = true;
                         this.selectedProduct = this.products.find(product => product.id === Number(params['id']));
                         setTimeout(() => {
@@ -35,6 +34,10 @@ export class ProductMobileComponent implements OnInit {
                     });
                 }
             );
+            setTimeout(() => {
+                this.selected.setValue(0);
+            }, 100);
+
     }
 
 }

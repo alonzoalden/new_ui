@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/shared/services/products.service';
 import { constructor } from 'jquery';
 import { Product } from 'src/app/shared/classes/product';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-list',
@@ -12,7 +13,8 @@ export class ListComponent implements OnInit {
     products: any;
 
     constructor(
-        private productsService: ProductsService
+        private productsService: ProductsService,
+        private router: Router
     ) { }
 
     ngOnInit() {
@@ -23,8 +25,9 @@ export class ListComponent implements OnInit {
             });
         });
     }
-    getRandomNum(): number {
-        return Math.random() * 100;
-    }
+    redirectTo(uri: string) {
+        this.router.navigateByUrl('/', { skipLocationChange: true })
+            .then(() => this.router.navigate([uri]));
+     }
 
 }
