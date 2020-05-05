@@ -1,11 +1,11 @@
 <div style="padding-bottom: 100px; padding-top: 48px;" *ngIf="product">
-    <div class="container " style="padding: 0; position: relative;">
+    <div class="container side-scroller" style="padding: 0; position: relative;">
         <ngx-slick-carousel style="display: flex; align-items: center; width: 100%;" class="product-5 product-m"
             #slickModal="slick-carousel" [config]="productSlideConfig">
             <div ngxSlickItem style="width: 100vh; height: 100%;"
                 *ngFor="let image of product.pictures; let i = index;">
                 <div style="padding: 8px 18px; height: 400px; background-position: center; background-repeat: no-repeat; background-size: contain;"
-                    [ngStyle]="{'background-image':'url(' + product.pictures[0] + ')'}">
+                    [ngStyle]="{'background-image':'url(' + product.pictures[i] + ')'}">
                     <div fxLayoutAlign="flex-end">
                         <div style="background-color: #111111; color: #fff; border-radius: 2px; padding: 2px 4px;">
                             {{ i + 1 }} / {{ product.pictures.length }}
@@ -26,7 +26,7 @@
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
-            <span style="padding-right: 10px;padding-left: 6px;"><a (click)="scrollToEl(reviewsTab, 0)" [routerLink]=""
+            <span style="padding-right: 10px;padding-left: 6px;"><a [routerLink]="['../../../',  'toolots', 'company', product.id]"
                     style="font-weight: 200;">14 store reviews</a></span>
         </div>
     </div>
@@ -38,14 +38,14 @@
                     <span class="material-icons" style="font-size: 42px; color: rgba(0, 0, 0, 0.3);">face</span>
                 </div>
                 <div flex="4" fxLayout="column" style="padding-left: 10px;">
-                    <div>RefrigKings</div>
+                    <div>{{ product.price > 260 && product.price < 399 ? 'JAEcool' : 'RefrigKings' }}</div>
                     <div class="rating five-star mini" style="margin-bottom:0px;">
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
-                        <span style="padding-right: 10px;padding-left: 6px;"><a (click)="scrollToEl(reviewsTab, 0)" [routerLink]=""
+                        <span style="padding-right: 10px;padding-left: 6px;"><a [routerLink]="['../../../',  'toolots', 'company', product.id]"
                                 style="font-weight: 200;">14 reviews</a></span>
                     </div>
                 </div>
@@ -102,11 +102,11 @@
         </mat-expansion-panel>
     </mat-accordion>
 </div>
-<div fxLayoutAlign="space-between" style="z-index: 99 !important; position: fixed; bottom: 0; width: 100%; background-color: #111111; color: #fff; padding: 10px 15px 10px 15px;">
+<div fxLayoutAlign="space-between" style="z-index: 99 !important; position: fixed; bottom: 0; width: 100%; background-color: #111111; color: #fff; padding: 6px 10px 6px 10px;">
     <div>
         <div style="color: #ffa928; font-size: 20px; font-weight: 700;">${{product?.price}}</div>
         <div style="color: #ffa928; font-weight: 400; letter-spacing: 2px;">LOW SUPPLY</div>
         <div style="color: rgba(255, 255, 255, 0.5); font-weight: 200; letter-spacing: 0.2px;">PLUS TAX AND S&H </div>
     </div>
-    <div fxLayoutAlign="center center"><button title="Add to Cart" class="add-to-cart btn btn-solid">Add to Cart</button></div>
-  </div>
+    <div fxLayoutAlign="center center"><button title="Add to Cart" (click)="cartService.addToCart(product)" class="add-to-cart btn btn-solid">Add to Cart</button></div>
+</div>
