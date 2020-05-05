@@ -11,27 +11,28 @@ declare var $: any;
 export class HomeToolotsComponent implements OnInit, OnDestroy {
 
   public products: Product[] = [];
-  
-  constructor(private productsService: ProductsService) {   }
-  
+
+  constructor(private productsService: ProductsService) { }
+
 
   ngOnInit() {
-      
-    
-  	this.productsService.getProducts().subscribe(product => { 
-  	  product.filter((item: Product) => {
-         if(item.category == 'tools')
-         	this.products.push(item)
-      })
+
+
+    this.productsService.getProducts().subscribe(product => {
+      product.filter((item: Product) => {
+        if (item.category === 'tools') {
+          this.products.push(item);
+        }
+      });
     });
     document.body.classList.add('tools-bg'); // Add class in body
-    //document.getElementsByClassName("header-type")[0].classList.add("header-tools");  // Change header 4 class
-    
+    // document.getElementsByClassName("header-type")[0].classList.add("header-tools");  // Change header 4 class
+
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     document.body.classList.remove('tools-bg');
-    //document.getElementsByClassName("header-type")[0].classList.remove("header-tools");
+    // document.getElementsByClassName("header-type")[0].classList.remove("header-tools");
   }
 
 }

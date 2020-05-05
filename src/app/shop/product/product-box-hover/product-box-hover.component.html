@@ -1,7 +1,7 @@
 <div class="img-wrapper">
     <div class="ribbon" *ngIf='product.new'><span>new</span></div>
     <div class="front">
-        <a [routerLink]="['/home/column/product', product.id]"><img [src]="product.pictures[0]" class="img-fluid" alt=""></a>
+        <a [routerLink]="['/home/toolots/all']"><img [src]="product.pictures[0]" class="img-fluid" alt=""></a>
     </div>
     <div class="cart-info cart-wrap" *ngIf="!productsService?.catalogMode">
         <a [routerLink]="" (click)="addToWishlist(product)" title="Add to Wishlist">

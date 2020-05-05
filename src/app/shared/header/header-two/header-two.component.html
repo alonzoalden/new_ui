@@ -1,65 +1,88 @@
 <!-- header start -->
-<header id="header-type" style="background-color: #111111;">
-	<div class="mobile-fix-option" style="background-color: #111111;"></div>
-	<div class="top-header">
-		<div class="container">
-			<!-- <app-topbar></app-topbar> style="background: rgba(10, 10, 10, 0.92);" -->
-		</div>
-	</div>
-	<div class="" >
-		<div class="row">
-			<div class="col-sm-12">
-				<div class="main-menu">
-					<div class="menu-left" style="flex: 1;">
-						<div class="navbar">
-							<a (click)="openNav()">
-								<div class="bar-style"> 
-									<i class="fa fa-bars sidebar-bar" aria-hidden="true"></i>
-								</div>
-							</a>
-							
-							<div id="mySidenav" class="sidenav">
-						    <a [routerLink]="" class="sidebar-overlay" (click)="closeNav()"></a>
-						    <nav style="background-color: #111;">
-						      <div (click)="closeNav()">
-						        <div class="sidebar-back text-left" style="color: #fff;"> 
-						          <i class="fa fa-angle-left pr-2" aria-hidden="true"></i> Back
-						        </div>
-						      </div>
-							  <app-left-menu></app-left-menu>
-							</nav>
-							</div>
-						</div>
-						
-						<div class="brand-logo" style="padding: 10px 0;">
-							<a [routerLink]="['/home/toolots']">
-								<img  src="assets/images/ToolotsLogo.png" style="min-height: 60px; max-width: 360px;" alt="">
-							</a>
-						</div>
-					</div>
-					<div class="nav-search-1" style="flex: 2; padding-left: 20px;">
-							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Search a Product by Keyword, SKU or TPIN" style="width: 100% !important;">
-							<button class="searchbutton">
-									<i style="color: #fff; font-size: 20px;" class="fa fa-search" aria-hidden="true"></i>
-							</button>
-					</div>
-					<div class="menu-right pull-right" style="padding-left: 30px;">
-						<div>
-							<app-navbar></app-navbar>
-						</div>
-						<div>
-							<app-header-widgets [shoppingCartItems]="shoppingCartItems"></app-header-widgets>
-						</div>
-					</div>
-				</div>
+<header style="background-color: #111111;">
+	<!-- <div class="mobile-fix-option" style="background-color: #111111;"></div> -->
+	<div fxLayout="row" fxLayoutAlign="space-between center" style="padding: 6px 15px;">
+		<div fxLayout="row" fxLayoutAlign="space-between center">
+			<div style="padding-right: 20px;">
+				<span *ngIf="url == '/home/toolots/all' || url == '/home/toolots'" class="material-icons" style="color: #fafafa;">menu</span>
+				<span *ngIf="!companyBackButton && url != '/home/toolots/all' && url !== '/home/toolots' && url !== '/home/toolots/company' " 
+					[routerLink]="['/home/toolots/all']"
+					class="material-icons" style="color: #fafafa;">arrow_back</span>
+				<span *ngIf="companyBackButton" (click)="companyBackButton = null;"
+					[routerLink]="['/home/toolots/product/', companyBackButton]"
+					class="material-icons" style="color: #fafafa;">arrow_back</span>
+					
+				
 			</div>
-			<div class="nav-search-2">
-					<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Search by Keyword, SKU or TPIN">
-					<button class="searchbutton">
-							<i style="color: #fff; font-size: 20px;" class="fa fa-search" aria-hidden="true"></i>
-					</button>
+			<div class="" style="padding: 0px 0;">
+				<a [routerLink]="['/home/toolots/all']">
+					<img src="assets/images/ToolotsLogo.png" style="min-height: 40px; max-width: 200px;"
+						alt="">
+				</a>
+			</div>
+		</div>
+		<div class="main-menu">
+			<div class="menu-right" style="float: none; padding: 0;">
+				<div class="icon-nav">
+					<ul>
+						<li class="onhover-div" style="padding-top: 10px; padding-bottom: 10px;" *ngIf="!productsService?.catalogMode">
+							<div [routerLink]="'/home/cart'">
+								<a>
+									<span class="material-icons"
+										style="color: #fafafa;">shopping_cart</span>
+									<!-- <i class="ti-shopping-cart"></i> -->
+								</a>
+							</div>
+							<ul class="show-div shopping-cart" *ngIf='!shoppingCartItems.length'>
+								<h5>Your cart is currently empty.</h5>
+							</ul>
+							<span class="cart_qty_cls">{{shoppingCartItems.length}}</span>
+							<!-- <ul class="show-div shopping-cart" *ngIf='shoppingCartItems.length'>
+								<li *ngFor="let item of shoppingCartItems">
+									<div class="media">
+										<a [routerLink]="['/home/left-sidebar/product', item.product.id]"><img
+												class="mr-3" [src]="item.product.pictures[0]"
+												alt="Generic placeholder image"></a>
+										<div class="media-body">
+											<a
+												[routerLink]="['/home/left-sidebar/product', item.product.id]">
+												<h4>{{ item.product.name }}</h4>
+											</a>
+											<h4><span>{{ item.quantity }} x
+													{{ item.product.price | currency:productsService?.currency:'symbol' }}</span>
+											</h4>
+										</div>
+									</div>
+									<div class="close-circle">
+										<a (click)="removeItem(item)"><i class="fa fa-times"
+												aria-hidden="true"></i></a>
+									</div>
+								</li>
+								<li>
+									<div class="total">
+										<h5>subtotal :
+											<span>{{ getTotal() | async | currency:productsService?.currency:'symbol'}}</span>
+										</h5>
+									</div>
+								</li>
+								<li>
+									<div class="buttons">
+										<a [routerLink]="'/home/cart'" class="view-cart">view cart</a>
+										<a [routerLink]="'/home/checkout'" class="checkout">checkout</a>
+									</div>
+								</li>
+							</ul> -->
+						</li>
+						<li class="onhover-div" style="padding-top: 10px; padding-bottom: 10px;">
+							<div>
+								<a [routerLink]="'/home/toolots/searchmobile'">
+									<span class="material-icons" style="color: #fafafa;">search</span>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
 </header>
-<!-- header end -->

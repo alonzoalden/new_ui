@@ -5,7 +5,7 @@ import { ShopRoutingModule } from './shop-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { BarRatingModule } from "ngx-bar-rating";
-import { RangeSliderModule  } from 'ngx-rangeslider-component';
+import { RangeSliderModule } from 'ngx-rangeslider-component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { NgxImgZoomModule } from 'ngx-img-zoom';
@@ -67,7 +67,7 @@ import { FrequentlyBoughtProductComponent } from './product/widgets/frequently-b
 import { ToolotsReviewModalComponent } from './product/widgets/toolots-review-modal/toolots-review-modal.component';
 import { WhyLowPriceModalComponent } from './product/widgets/why-low-price-modal/why-low-price-modal.component';
 
-import { SearchComponent } from './product/search/search.component';
+
 import { ProductCompareComponent } from './product/product-compare/product-compare.component';
 import { WishlistComponent } from './product/wishlist/wishlist.component';
 import { CartComponent } from './product/cart/cart.component';
@@ -77,95 +77,123 @@ import { ExitPopupComponent } from './product/widgets/exit-popup/exit-popup.comp
 import { AgeVerificationComponent } from './product/widgets/age-verification/age-verification.component';
 import { NewsletterComponent } from './product/widgets/newsletter/newsletter.component';
 
-
 import { ToolotsSliderComponent } from './toolots/slider/slider.component'
 import { AboutToolotsComponent } from './toolots/about/about.component'
 import { TooltipModule } from 'ng2-tooltip-directive';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CollapseModule, BsDropdownModule } from 'ngx-bootstrap';
-@NgModule({
-  exports: [ExitPopupComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    ShopRoutingModule,
-    SharedModule,
-    SlickCarouselModule,
-    BarRatingModule,
-    RangeSliderModule,
-    InfiniteScrollModule,
-    NgxPayPalModule,
-    NgxImgZoomModule,
-    NgxImageZoomModule.forRoot(),
-    LightboxModule,
-    TooltipModule,
-    NgbModule,
-    CollapseModule.forRoot()
-  ],
-  declarations: [
-    ToolotsCollectionSliderThirteenComponent,
-    ToolotsPopularProductsComponent,
-    ToolotsFilterProductsComponent,
-    ToolotsProductTabThirteenComponent,
-    ToolotsLogoThirteenComponent,
-    WhyLowPriceModalComponent,
-    ToolotsReviewModalComponent,
-    ToolotsSliderComponent,
-    AboutToolotsComponent,
-    
-    HomeToolotsComponent,
-    
-    // home thirteen
-    HomeThirteenComponent,
-    SliderThirteenComponent,
-    AboutComponent,
-    CollectionSliderThirteenComponent,
-    PopularProductsComponent,
-    FilterProductsComponent,
-    ProductTabThirteenComponent,
-    LogoThirteenComponent,
+import { ListComponent } from './toolots-mobile/list/list.component';
+import { SettingsComponent } from './toolots-mobile/settings/settings.component';
+import { OverviewComponent } from './toolots-mobile/product/overview/overview.component';
+import { RelatedComponent } from './toolots-mobile/product/related/related.component';
+import { ProductMobileComponent } from './toolots-mobile/product/product.component';
+import { SearchComponent } from './toolots-mobile/search/search.component';
 
-    
-    // Product
-    ProductComponent,
-    ProductBoxComponent,
-    ProductBoxHoverComponent,
-    ProductBoxVerticalComponent,
-    ProductBoxMetroComponent,
-    CollectionLeftSidebarComponent,
-    CollectionRightSidebarComponent,
-    CollectionNoSidebarComponent,
-    ColorComponent,
-    BrandComponent,
-    PriceComponent,
-    ProductLeftSidebarComponent,
-    ProductRightSidebarComponent,
-    ProductNoSidebarComponent,
-    ProductColLeftComponent,
-    ProductColRightComponent,
-    ProductColumnComponent,
-    ProductAccordianComponent,
-    ProductLeftImageComponent,
-    ProductRightImageComponent,
-    ProductVerticalTabComponent,
-    RelatedProductsComponent,
-    BoughtTogetherComponent,
-    SidebarComponent,
-    CategoriesComponent,
-    QuickViewComponent,
-    ModalCartComponent,
-    NewProductComponent,
-    FrequentlyBoughtProductComponent,
-    SearchComponent,
-    ProductCompareComponent,
-    WishlistComponent,
-    CartComponent,
-    CheckoutComponent,
-    SuccessComponent,
-    ExitPopupComponent,
-    AgeVerificationComponent,
-    NewsletterComponent
-  ]
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { CompanyComponent } from './toolots-mobile/company/company.component';
+
+@NgModule({
+    exports: [ExitPopupComponent],
+    imports: [
+        MatButtonModule,
+        MatFormFieldModule,
+        MatExpansionModule,
+        MatTabsModule,
+        MatGridListModule,
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        ShopRoutingModule,
+        SharedModule,
+        SlickCarouselModule,
+        BarRatingModule,
+        RangeSliderModule,
+        InfiniteScrollModule,
+        NgxPayPalModule,
+        NgxImgZoomModule,
+        NgxImageZoomModule.forRoot(),
+        LightboxModule,
+        TooltipModule,
+        NgbModule,
+        CollapseModule.forRoot()
+    ],
+    declarations: [
+        ToolotsCollectionSliderThirteenComponent,
+        ToolotsPopularProductsComponent,
+        ToolotsFilterProductsComponent,
+        ToolotsProductTabThirteenComponent,
+        ToolotsLogoThirteenComponent,
+        WhyLowPriceModalComponent,
+        ToolotsReviewModalComponent,
+        ToolotsSliderComponent,
+        AboutToolotsComponent,
+
+        HomeToolotsComponent,
+
+        // home thirteen
+        HomeThirteenComponent,
+        SliderThirteenComponent,
+        AboutComponent,
+        CollectionSliderThirteenComponent,
+        PopularProductsComponent,
+        FilterProductsComponent,
+        ProductTabThirteenComponent,
+        LogoThirteenComponent,
+
+
+        // Product
+        ProductComponent,
+        ProductBoxComponent,
+        ProductBoxHoverComponent,
+        ProductBoxVerticalComponent,
+        ProductBoxMetroComponent,
+        CollectionLeftSidebarComponent,
+        CollectionRightSidebarComponent,
+        CollectionNoSidebarComponent,
+        ColorComponent,
+        BrandComponent,
+        PriceComponent,
+        ProductLeftSidebarComponent,
+        ProductRightSidebarComponent,
+        ProductNoSidebarComponent,
+        ProductColLeftComponent,
+        ProductColRightComponent,
+        ProductColumnComponent,
+        ProductAccordianComponent,
+        ProductLeftImageComponent,
+        ProductRightImageComponent,
+        ProductVerticalTabComponent,
+        RelatedProductsComponent,
+        BoughtTogetherComponent,
+        SidebarComponent,
+        CategoriesComponent,
+        QuickViewComponent,
+        ModalCartComponent,
+        NewProductComponent,
+        FrequentlyBoughtProductComponent,
+        SearchComponent,
+        ProductCompareComponent,
+        WishlistComponent,
+        CartComponent,
+        CheckoutComponent,
+        SuccessComponent,
+        ExitPopupComponent,
+        AgeVerificationComponent,
+        NewsletterComponent,
+
+
+
+        // mobile new
+        ListComponent,
+        SettingsComponent,
+        OverviewComponent,
+        RelatedComponent,
+        ProductMobileComponent,
+        CompanyComponent,
+    ]
 })
 export class ShopModule { }

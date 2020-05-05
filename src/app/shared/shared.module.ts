@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from "@angular/router";
+import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 // Services
-import { WINDOW_PROVIDERS } from "./services/windows.service";
+import { WINDOW_PROVIDERS } from './services/windows.service';
 import { LandingFixService } from '../shared/services/landing-fix.service';
-import { InstagramService } from "./services/instagram.service";
-import { ProductsService } from "./services/products.service";
-import { WishlistService } from "./services/wishlist.service";
-import { CartService } from "./services/cart.service";
-import { OrderService } from "./services/order.service";
-import { PaginationService } from "./classes/paginate";
+import { InstagramService } from './services/instagram.service';
+import { ProductsService } from './services/products.service';
+import { WishlistService } from './services/wishlist.service';
+import { CartService } from './services/cart.service';
+import { OrderService } from './services/order.service';
+import { PaginationService } from './classes/paginate';
 // Pipes
 import { OrderByPipe } from './pipes/order-by.pipe';
 // components
@@ -31,6 +31,7 @@ import { WhyWeChooseComponent } from './footer/widgets/why-we-choose/why-we-choo
 import { CopyrightComponent } from './footer/widgets/copyright/copyright.component';
 import { SocialComponent } from './footer/widgets/social/social.component';
 import { HeaderTwoComponent } from './header/header-two/header-two.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   exports: [
@@ -42,12 +43,14 @@ import { HeaderTwoComponent } from './header/header-two/header-two.component';
     FooterTwoComponent,
     FooterThreeComponent,
     FooterFourComponent,
-    OrderByPipe
+    OrderByPipe,
+    FlexLayoutModule
   ],
   imports: [
     CommonModule,
     RouterModule,
-    TranslateModule
+    TranslateModule,
+    FlexLayoutModule
   ],
   declarations: [
     HeaderOneComponent,

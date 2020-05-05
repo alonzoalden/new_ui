@@ -20,7 +20,10 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
   	this.cartItems = this.cartService.getItems();
-    this.cartItems.subscribe(shoppingCartItems => this.shoppingCartItems = shoppingCartItems);
+    this.cartItems.subscribe(shoppingCartItems => {
+      console.log(shoppingCartItems);
+      return this.shoppingCartItems = shoppingCartItems;
+    });
   }
  
   // Increase Product Quantity

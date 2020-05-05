@@ -5,31 +5,31 @@ import { HomeToolotsComponent } from './shop/toolots/home-toolots.component';
 
 
 export const rootRouterConfig: Routes = [
-  { 
-    path: '', 
-    redirectTo: 'home/toolots', 
+  {
+    path: '',
+    redirectTo: 'home/toolots',
     pathMatch: 'full',
   },
-  { 
-    path : '',
-    component : MainComponent,
-    children: [ 
+  {
+    path: '',
+    component: MainComponent,
+    children: [
       {
-        path : 'home',
+        path: 'home',
         loadChildren: './shop/shop.module#ShopModule'
       },
-      { 
+      {
         path: 'pages',
         loadChildren: './pages/pages.module#PagesModule'
       },
-      { 
+      {
         path: 'blog',
         loadChildren: './blog/blog.module#BlogModule'
       }
     ]
   },
-  { 
-    path: '**', 
+  {
+    path: '**',
     redirectTo: 'home/one'
   }
 ];
