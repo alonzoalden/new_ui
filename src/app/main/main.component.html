@@ -1,6 +1,8 @@
-<div fxLayout="column" style="height: 100vh;">
-	<app-header-two style="
-	z-index: 999;" *ngIf="url != '/home/two' && url != '/home/three' && url != '/home/four' && url != '/home/five' && url != '/home/ten' && url != '/home/eleven' && url != '/home/twelve' && url != '/home/thirteen' && url != '/home/fourteen'"></app-header-two>
+<div fxLayout="column">
+	<app-header-two style="position: fixed;
+		right: 0;
+		left: 0;
+		z-index: 999;" *ngIf="url != '/home/two' && url != '/home/three' && url != '/home/four' && url != '/home/five' && url != '/home/ten' && url != '/home/eleven' && url != '/home/twelve' && url != '/home/thirteen' && url != '/home/fourteen'"></app-header-two>
 	<!--
 	<app-header-two *ngIf="url == '/home/five' || url == '/home/three'"></app-header-two>
 
@@ -12,7 +14,7 @@
 
 	<!-- <app-left-sidebar *ngIf="url == '/home/eleven'"></app-left-sidebar> -->
 
-	<div style="overflow: auto;" [class]="url == '/home/eleven' ? 'left-sidebar_space' : ''"> <!-- Left sidebar menu only -->
+	<div style="padding-top: 61px;" [class]="url == '/home/eleven' ? 'left-sidebar_space' : ''"> <!-- Left sidebar menu only -->
 
 		<router-outlet></router-outlet>
 
