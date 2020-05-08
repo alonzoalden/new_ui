@@ -77,8 +77,8 @@ import { ExitPopupComponent } from './product/widgets/exit-popup/exit-popup.comp
 import { AgeVerificationComponent } from './product/widgets/age-verification/age-verification.component';
 import { NewsletterComponent } from './product/widgets/newsletter/newsletter.component';
 
-import { ToolotsSliderComponent } from './toolots/slider/slider.component'
-import { AboutToolotsComponent } from './toolots/about/about.component'
+import { ToolotsSliderComponent } from './toolots/slider/slider.component';
+import { AboutToolotsComponent } from './toolots/about/about.component';
 import { TooltipModule } from 'ng2-tooltip-directive';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CollapseModule, BsDropdownModule } from 'ngx-bootstrap';
@@ -94,7 +94,11 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
+
+
 import { CompanyComponent } from './toolots-mobile/company/company.component';
+import { MenuComponent } from './toolots-mobile/menu/menu.component';
 
 @NgModule({
     exports: [ExitPopupComponent],
@@ -104,6 +108,7 @@ import { CompanyComponent } from './toolots-mobile/company/company.component';
         MatExpansionModule,
         MatTabsModule,
         MatGridListModule,
+        MatListModule,
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
@@ -194,6 +199,7 @@ import { CompanyComponent } from './toolots-mobile/company/company.component';
         RelatedComponent,
         ProductMobileComponent,
         CompanyComponent,
+        MenuComponent,
     ]
 })
 export class ShopModule { }

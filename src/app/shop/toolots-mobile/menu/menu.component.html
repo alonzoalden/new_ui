@@ -1,0 +1,49 @@
+<div fxLayout="row" style="width: 100%; height: 96px;background-color: black; color: #fff;">
+    <div fxFlex="20" fxLayoutAlign="center center">
+        <span class="material-icons" style="color: #fafafa; font-size: 36px;">face</span>
+    </div>
+    <div fxFlex="80" fxLayoutAlign="start center">
+        <div fxLayout="column">
+            <div style="font-weight: 600; font-size: 16px;">Alonzo Alden</div>
+            <a style="font-weight: 200; font-size: 12px; letter-spacing: 0.3px;">VIEW PROFILE</a>
+        </div>
+    </div>
+</div>
+
+<mat-list role="list" style="letter-spacing: 0.6px;">
+    <mat-list-item role="listitem" [routerLink]="['/home/cart']" >
+        <div fxFlex="90">CART</div>
+        <div class="material-icons" fxLayoutAlign="end">arrow_right</div>
+    </mat-list-item>
+    <mat-list-item role="listitem" [routerLink]="['/home/toolots/all']">
+        <div fxFlex="90">VIEW CATEGORIES</div>
+        <div class="material-icons" fxLayoutAlign="end">arrow_right</div>
+    </mat-list-item>
+    <mat-list-item role="listitem" [routerLink]="['/home/toolots/all']">
+        <div fxFlex="90">VIEW BEST SELLERS</div>
+        <div class="material-icons" fxLayoutAlign="end">arrow_right</div>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+        <div fxFlex="90">REWARDS</div>
+        <div class="material-icons" fxLayoutAlign="end">arrow_right</div>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+        <div fxFlex="90">ORDER HISTORY</div>
+        <div class="material-icons" fxLayoutAlign="end">arrow_right</div>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+        <div fxFlex="90">SUPPORT</div>
+        <div class="material-icons" fxLayoutAlign="end">arrow_right</div>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+        <div fxFlex="90">ABOUT TOOLOTS</div>
+        <div class="material-icons" fxLayoutAlign="end">arrow_right</div>
+    </mat-list-item>
+
+    <mat-list-item role="listitem" style="position: fixed; bottom: 0;" [routerLink]="['']">
+        <div fxLayoutAlign="start center" style="font-weight: 600;">
+            SIGN OUT
+        </div>
+    </mat-list-item>
+</mat-list>
+

@@ -73,7 +73,6 @@ export class MainComponent implements OnInit, AfterViewInit, OnDestroy {
         this.productService.product
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(product => {
-                console.log(product);
                 this.product = product;
             });
     }

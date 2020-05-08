@@ -5,6 +5,9 @@
 		<div fxLayout="row" fxLayoutAlign="space-between center">
 			<div style="padding-right: 20px;">
 				<div *ngIf="url == '/home/toolots/all' || url == '/home/toolots'" class="material-icons" style="color: #fafafa;">
+					<i [routerLink]="['/home/toolots/menu']" class="fa fa-bars sidebar-bar" aria-hidden="true"></i>
+				</div>
+				<!-- <div *ngIf="url == '/home/toolots/all' || url == '/home/toolots'" class="material-icons" style="color: #fafafa;">
 					<a (click)="openNav()">
 						<div class="bar-style"> 
 							<i class="fa fa-bars sidebar-bar" aria-hidden="true"></i>
@@ -13,7 +16,7 @@
 					
 					<div id="mySidenav" class="sidenav">
 						<a [routerLink]="" class="sidebar-overlay" (click)="closeNav()"></a>
-						<nav style="background-color: #111;">
+						<nav style="background-color: #111; font-family: Lato, sans-serif;">
 						<div (click)="closeNav()">
 							<div class="sidebar-back text-left" style="color: #fff;"> 
 							<i class="fa fa-angle-left pr-2" aria-hidden="true"></i> Back
@@ -22,7 +25,7 @@
 						<app-left-menu></app-left-menu>
 						</nav>
 					</div>
-				</div>
+				</div> -->
 
 
 				<span *ngIf="!companyBackButton && url != '/home/toolots/all' && url !== '/home/toolots' && url !== '/home/toolots/company' " 

@@ -25,6 +25,8 @@ import { ListComponent } from './toolots-mobile/list/list.component';
 import { ProductComponent } from './product/product.component';
 import { ProductMobileComponent } from './toolots-mobile/product/product.component';
 import { CompanyComponent } from './toolots-mobile/company/company.component';
+import { MenuComponent } from './toolots-mobile/menu/menu.component';
+import { AboutToolotsComponent } from './toolots/about/about.component';
 
 // Routes
 const routes: Routes = [
@@ -50,6 +52,15 @@ const routes: Routes = [
         path: 'toolots/company/:id',
         component: CompanyComponent,
         pathMatch: 'full',
+    },
+    {
+        path: 'toolots/menu',
+        component: MenuComponent,
+        pathMatch: 'full',
+    },
+    {
+        path: 'home/toolots/about',
+        component: AboutToolotsComponent
     },
     {
         path: 'left-sidebar/collection/:category',
