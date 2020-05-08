@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { ToastrService } from 'ngx-toastr';
 import { Product } from '../classes/product';
-import { BehaviorSubject, Observable, of, Subscriber} from 'rxjs';
+import { BehaviorSubject, Observable, of, Subscriber } from 'rxjs';
 import { map, filter, scan } from 'rxjs/operators';
 import 'rxjs/add/operator/map';
 
@@ -12,21 +12,22 @@ let products = JSON.parse(localStorage.getItem("compareItem")) || [];
 @Injectable()
 
 export class ProductsService {
-  
-  public currency : string = 'USD';
-  public catalogMode : boolean = false;
-  
-  public compareProducts : BehaviorSubject<Product[]> = new BehaviorSubject([]);
-  public observer   :  Subscriber<{}>;
+
+  public currency: string = 'USD';
+  public catalogMode: boolean = false;
+
+  public compareProducts: BehaviorSubject<Product[]> = new BehaviorSubject([]);
+  public product: BehaviorSubject<Product> = new BehaviorSubject(null);
+  public observer: Subscriber<{}>;
 
   // Initialize 
-  constructor(private http: Http,private toastrService: ToastrService) { 
-     this.compareProducts.subscribe(products => products = products);
+  constructor(private http: Http, private toastrService: ToastrService) {
+    this.compareProducts.subscribe(products => products = products);
   }
 
   // Observable Product Array
   private products(): Observable<Product[]> {
-     return this.http.get('assets/data/products.json').map((res:any) => res.json())
+    return this.http.get('assets/data/products.json').map((res: any) => res.json())
   }
 
   // Get Products
@@ -39,24 +40,24 @@ export class ProductsService {
     return this.products().pipe(map(items => { return items.find((item: Product) => { return item.id === id; }); }));
   }
 
-   // Get Products By category
+  // Get Products By category
   public getProductByCategory(category: string): Observable<Product[]> {
-    return this.products().pipe(map(items => 
-       items.filter((item: Product) => {
-         if(category == 'all')
-            return item
-         else
-            return item.category === category; 
-        
-       })
-     ));
+    return this.products().pipe(map(items =>
+      items.filter((item: Product) => {
+        if (category == 'all')
+          return item
+        else
+          return item.category === category;
+
+      })
+    ));
   }
-  
-   /*
-      ---------------------------------------------
-      ----------  Compare Product  ----------------
-      ---------------------------------------------
-   */
+
+  /*
+     ---------------------------------------------
+     ----------  Compare Product  ----------------
+     ---------------------------------------------
+  */
 
   // Get Compare Products
   public getComapreProducts(): Observable<Product[]> {
@@ -80,13 +81,13 @@ export class ProductsService {
       item = products.filter(item => item.id === product.id)[0];
       const index = products.indexOf(item);
     } else {
-      if(products.length < 4)
+      if (products.length < 4)
         products.push(product);
-      else 
+      else
         this.toastrService.warning('Maximum 4 products are in compare.'); // toasr services
     }
-      localStorage.setItem("compareItem", JSON.stringify(products));
-      return item;
+    localStorage.setItem("compareItem", JSON.stringify(products));
+    return item;
   }
 
   // Removed Product
@@ -96,5 +97,5 @@ export class ProductsService {
     products.splice(index, 1);
     localStorage.setItem("compareItem", JSON.stringify(products));
   }
-   
+
 }
