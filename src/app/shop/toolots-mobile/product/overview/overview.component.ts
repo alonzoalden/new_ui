@@ -57,10 +57,8 @@ export class OverviewComponent implements OnInit, OnDestroy {
         console.log('slick initialized');
     }
     ngOnInit() {
-        // this.footerDisplayService.showFooter.next(true);
     }
     ngOnDestroy() {
-        // this.footerDisplayService.onShowFooter(false);
     }
     scrollToBottom(event): void {
         this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;

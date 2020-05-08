@@ -31,15 +31,15 @@ export class ProductMobileComponent implements OnInit, OnDestroy {
                         this.isLoading = true;
                         this.selectedProduct = this.products.find(product => product.id === Number(params['id']));
 
-                        this.route.params.subscribe(routeParams => {
-                            const id = +routeParams['id'];
-                            this.productsService.product
-                                .subscribe(item => {
-                                    if (!item) {
-                                        this.productsService.product.next(this.products.find(product => product.id === id));
-                                    }
-                                });
-                        });
+                        // this.route.params.subscribe(routeParams => {
+                        //     const id = +routeParams['id'];
+                        //     this.productsService.product
+                        //         .subscribe(item => {
+                        //             if (!item) {
+                        //                 this.productsService.product.next(this.products.find(product => product.id === id));
+                        //             }
+                        //         });
+                        // });
 
                         setTimeout(() => {
                             this.isLoading = false;
@@ -48,18 +48,18 @@ export class ProductMobileComponent implements OnInit, OnDestroy {
                 }
             );
         this.selected.setValue(0);
-        this.footerDisplayService.onShowFooter(true);
+        // this.footerDisplayService.onShowFooter(true);
 
     }
     ngOnDestroy() {
-        this.footerDisplayService.onShowFooter(false);
+        // this.footerDisplayService.onShowFooter(false);
     }
     onShowFooter() {
-        if (this.selected.value === 0) {
-            this.footerDisplayService.onShowFooter(true);
-        } else {
-            this.footerDisplayService.onShowFooter(false);
-        }
+        // if (this.selected.value === 0) {
+        //     this.footerDisplayService.onShowFooter(true);
+        // } else {
+        //     this.footerDisplayService.onShowFooter(false);
+        // }
     }
 
 }

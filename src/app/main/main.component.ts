@@ -18,9 +18,9 @@ declare var $: any;
 export class MainComponent implements OnInit, AfterViewInit, OnDestroy {
 
     public url: any;
-    showFooter: boolean;
+    // showFooter: boolean;
     private _unsubscribeAll: Subject<boolean>;
-    product: any;
+    // product: any;
 
     constructor(private router: Router, public footerDisplayService: FooterDisplayService, private productService: ProductsService) {
         this.router.events.subscribe((event) => {
@@ -65,16 +65,16 @@ export class MainComponent implements OnInit, AfterViewInit, OnDestroy {
                 }
             }
         });
-        this.footerDisplayService.showFooter
-            .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe(value => {
-                setTimeout(() => this.showFooter = value, 100);
-            });
-        this.productService.product
-            .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe(product => {
-                this.product = product;
-            });
+        // this.footerDisplayService.showFooter
+        //     .pipe(takeUntil(this._unsubscribeAll))
+        //     .subscribe(value => {
+        //         setTimeout(() => this.showFooter = value, 100);
+        //     });
+        // this.productService.product
+        //     .pipe(takeUntil(this._unsubscribeAll))
+        //     .subscribe(product => {
+        //         this.product = product;
+        //     });
     }
     ngOnDestroy(): void {
         this._unsubscribeAll.next();
