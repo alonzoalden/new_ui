@@ -15,7 +15,6 @@ export class CompanyComponent implements OnInit, AfterViewInit {
     ngOnInit() {
         if (this.scrollContainerEl) {
             setTimeout(() => {
-                console.log(this.scrollContainerEl.nativeElement);
                 this.scrollContainerEl.nativeElement.scrollTop = -200;
             }, 1000);
         }

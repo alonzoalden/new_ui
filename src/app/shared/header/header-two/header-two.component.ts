@@ -36,7 +36,6 @@ export class HeaderTwoComponent implements OnInit {
                 if (this.url.includes('/company/')) {
                     const previousID = event.url.split('/company/')[1];
                     this.companyBackButton = previousID;
-                    console.log(this.companyBackButton);
                 }
             }
         });

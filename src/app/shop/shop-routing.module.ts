@@ -59,10 +59,6 @@ const routes: Routes = [
         pathMatch: 'full',
     },
     {
-        path: 'home/toolots/about',
-        component: AboutToolotsComponent
-    },
-    {
         path: 'left-sidebar/collection/:category',
         component: CollectionLeftSidebarComponent
     },
