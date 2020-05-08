@@ -26,8 +26,9 @@ export class ListComponent implements OnInit {
         });
     }
     redirectTo(uri: string) {
+        this.productsService.product.next(this.products.find(product => product.id === uri));
         this.router.navigateByUrl('/', { skipLocationChange: true })
-            .then(() => this.router.navigate([uri]));
+            .then(() => this.router.navigate(['/home/toolots/product/' + uri]));
      }
 
 }

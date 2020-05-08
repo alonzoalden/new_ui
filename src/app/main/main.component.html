@@ -1,7 +1,5 @@
-<div fxLayout="column">
-	<app-header-two style="position: fixed;
-	right: 0;
-	left: 0;
+<div fxLayout="column" style="height: 100vh;">
+	<app-header-two style="
 	z-index: 999;" *ngIf="url != '/home/two' && url != '/home/three' && url != '/home/four' && url != '/home/five' && url != '/home/ten' && url != '/home/eleven' && url != '/home/twelve' && url != '/home/thirteen' && url != '/home/fourteen'"></app-header-two>
 	<!--
 	<app-header-two *ngIf="url == '/home/five' || url == '/home/three'"></app-header-two>
@@ -14,7 +12,7 @@
 
 	<!-- <app-left-sidebar *ngIf="url == '/home/eleven'"></app-left-sidebar> -->
 
-	<div style="padding-top: 61px;" [class]="url == '/home/eleven' ? 'left-sidebar_space' : ''"> <!-- Left sidebar menu only -->
+	<div style="overflow: auto;" [class]="url == '/home/eleven' ? 'left-sidebar_space' : ''"> <!-- Left sidebar menu only -->
 
 		<router-outlet></router-outlet>
 
@@ -32,5 +30,13 @@
 
 	</div>
 
+	<div *ngIf="showFooter === true && product" fxLayoutAlign="space-between" style="z-index: 99 !important; width: 100%; background-color: #111111; color: #fff; padding: 6px 10px 6px 10px;">
+		<div>
+			<div style="color: #ffa928; font-size: 20px; font-weight: 700;">${{product?.price}}</div>
+			<div style="color: #ffa928; font-weight: 400; letter-spacing: 2px;">LOW SUPPLY</div>
+			<div style="color: rgba(255, 255, 255, 0.5); font-weight: 200; letter-spacing: 0.2px;">PLUS TAX AND S&H </div>
+		</div>
+		<div fxLayoutAlign="center center"><button title="Add to Cart" (click)="cartService.addToCart(product)" class="add-to-cart btn btn-solid">Add to Cart</button></div>
+	</div>
 
 </div>

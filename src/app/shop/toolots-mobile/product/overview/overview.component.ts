@@ -1,14 +1,15 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, SimpleChanges, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, SimpleChanges, OnChanges, OnDestroy } from '@angular/core';
 import { Product } from 'src/app/shared/classes/product';
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
 import { CartService } from 'src/app/shared/services/cart.service';
+import { FooterDisplayService } from 'src/app/shared/services/footer-display.service';
 
 @Component({
     selector: 'app-product-overview',
     templateUrl: './overview.component.html',
     styleUrls: ['./overview.component.scss']
 })
-export class OverviewComponent implements OnInit {
+export class OverviewComponent implements OnInit, OnDestroy {
     // Slick slider config
     public productSlideConfig: any = {
         infinite: true,
@@ -48,13 +49,18 @@ export class OverviewComponent implements OnInit {
     @ViewChild('myScrollContainer') private myScrollContainer: ElementRef;
     @ViewChild('slickModal') private slickModal: SlickCarouselComponent;
     constructor(
-        public cartService: CartService
+        public cartService: CartService,
+        public footerDisplayService: FooterDisplayService
     ) { }
 
     slickInit(e) {
         console.log('slick initialized');
-      }
+    }
     ngOnInit() {
+        // this.footerDisplayService.showFooter.next(true);
+    }
+    ngOnDestroy() {
+        // this.footerDisplayService.onShowFooter(false);
     }
     scrollToBottom(event): void {
         this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;

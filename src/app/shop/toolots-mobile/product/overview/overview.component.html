@@ -1,10 +1,10 @@
-<div style="padding-bottom: 100px; padding-top: 48px;" *ngIf="product">
+<div style="padding-top: 48px;" *ngIf="product">
     <div class="container side-scroller" style="padding: 0; position: relative;">
         <ngx-slick-carousel style="display: flex; align-items: center; width: 100%;" class="product-5 product-m"
             #slickModal="slick-carousel" [config]="productSlideConfig">
             <div ngxSlickItem style="width: 100vh; height: 100%;"
                 *ngFor="let image of product.pictures; let i = index;">
-                <div style="padding: 8px 18px; height: 400px; background-position: center; background-repeat: no-repeat; background-size: contain;"
+                <div style="padding: 8px 18px; height: 380px; background-position: center; background-repeat: no-repeat; background-size: contain;"
                     [ngStyle]="{'background-image':'url(' + product.pictures[i] + ')'}">
                     <div fxLayoutAlign="flex-end">
                         <div style="background-color: #111111; color: #fff; border-radius: 2px; padding: 2px 4px;">
@@ -101,12 +101,4 @@
 
         </mat-expansion-panel>
     </mat-accordion>
-</div>
-<div fxLayoutAlign="space-between" style="z-index: 99 !important; position: fixed; bottom: 0; width: 100%; background-color: #111111; color: #fff; padding: 6px 10px 6px 10px;">
-    <div>
-        <div style="color: #ffa928; font-size: 20px; font-weight: 700;">${{product?.price}}</div>
-        <div style="color: #ffa928; font-weight: 400; letter-spacing: 2px;">LOW SUPPLY</div>
-        <div style="color: rgba(255, 255, 255, 0.5); font-weight: 200; letter-spacing: 0.2px;">PLUS TAX AND S&H </div>
-    </div>
-    <div fxLayoutAlign="center center"><button title="Add to Cart" (click)="cartService.addToCart(product)" class="add-to-cart btn btn-solid">Add to Cart</button></div>
 </div>

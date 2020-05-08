@@ -32,6 +32,7 @@ import { CopyrightComponent } from './footer/widgets/copyright/copyright.compone
 import { SocialComponent } from './footer/widgets/social/social.component';
 import { HeaderTwoComponent } from './header/header-two/header-two.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FooterDisplayService } from './services/footer-display.service';
 
 @NgModule({
   exports: [
@@ -79,7 +80,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     WishlistService,
     CartService,
     OrderService,
-    PaginationService
+    PaginationService,
+    FooterDisplayService
   ]
 })
 export class SharedModule { }
